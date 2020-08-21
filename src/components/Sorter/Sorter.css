@@ -1,0 +1,12 @@
+/* .container {
+    position: absolute;
+    left: 100px;
+} */
+
+.bar {
+    width: 30px;
+    /* background-color: blueviolet; */
+    transition: 0.3s;
+    display: inline-block;
+    margin: 0 2px
+}
