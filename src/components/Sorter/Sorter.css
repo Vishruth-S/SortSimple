@@ -1,14 +1,14 @@
-/* .container {
+.container {
     height: 520px;
-} */
+}
 
 .bar {
-    width: 30px;
+    /* width: 30px; */
     text-align: left;
     /* background-color: blueviolet; */
-    transition: 0.3s;
+    /* transition: 0s; */
     display: inline-block;
-    margin: 0 2px;
+    margin: 0 1px;
     position: relative;
 }
 
