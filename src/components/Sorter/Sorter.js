@@ -7,7 +7,7 @@ class Sorter extends Component {
 
     state = {
         array: [],
-        colors: Array(10).fill('blueviolet'),
+        colors: [],
     } 
 
     componentDidMount() {
@@ -16,36 +16,53 @@ class Sorter extends Component {
 
     arrayReset() {
         const new_array = []
-        for( let i=0; i<10; i++) {
-            new_array.push(randomNumber(5,500))
+        for( let i=0; i<20; i++) {
+            new_array.push(randomNumber(30,500))
         }
 
-        this.setState({array: new_array, colors: Array(10).fill('blueviolet')})
+        this.setState({array: new_array, colors: Array(new_array.length).fill('blueviolet')})
         // this.setState({anim: new_array})
     }
 
     bubblesorter = async () => {
         let arr = this.state.array
         var len = arr.length,
-        i, j, stop;
+        i, j, flag=0;
+        const colors = []
+        let color = 'blueviolet'
             for (i=0; i < len; i++){
-                    for (j=0, stop=len-i; j < stop; j++){
+                    for (j=0; j < len-i-1; j++){
                         // this.setState({color: "yellow"})
+                        
+                        for (let k=0; k<len; k++) {                           
+                            if(k===j || k===j+1 ) 
+                            {
+                                color = 'red'
+                            }
+                            else if(colors[k]!=='green')
+                            {
+                                color = 'blueviolet'
+                            }
+                            else {
+                                color = 'green'
+                            }
+                            colors[k] = color
+                        }
+                        // console.log(colors)
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        this.setState({ array: arr})
+                        // await new Promise(resolve => setTimeout(resolve, 1000));
                         if (arr[j] > arr[j+1]){
                             swap(arr, j, j+1);
                             // this.setState({color: "red"})
                         } 
-                        await new Promise(resolve => setTimeout(resolve, 1000));
                         // this.setState({array:arr, color: "blueviolet"})
                         // const colors = arr.map((item, index) => (this.state.array[index] === item ? 'red' : 'blueviolet'));
-                        const colors = []
-                        for (let k=0; k<10; k++) {
-                            let color = k==j || k==j+1 ? 'red':'blueviolet'
-                            colors[k] = color
-                        }
-                        // console.log(colors)
-                        this.setState({ array: arr, colors: colors });
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        this.setState({colors:colors})
                     }
+                    colors[len-i-1] = 'green'
+                    this.setState({colors: colors });
                 }   
         // this.setState({anim:arr})
     }
@@ -64,8 +81,8 @@ class Sorter extends Component {
                                 className="bar" 
                                 key={id} 
                                 style={{ height: value + 'px', backgroundColor: colors[id] }} >
+                                <span class="number">{value}</span>
                             </div>
-                            {/* <span>{value}</span> */}
                         </span>
                     ))}
                 </div>
