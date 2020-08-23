@@ -1,29 +1,36 @@
 import React, { Component } from 'react'
 
 import './Sorter.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import BubbleSort from '../SortingAlgorithms/BubbleSort'
+import Navbar from '../UI/Navbar/Navbar'
+import ArrayDisplay from '../../containers/ArrayDisplay/ArrayDisplay'
+import ToolBar from '../UI/ToolBar/ToolBar'
+import ShowAlgorithm from '../ShowAlgorithm/ShowAlgorithm'
 
 class Sorter extends Component {
 
     state = {
         array: [],
         colors: [],
-        BubblesortAlgo: ["for i=0 to last_Element","for j=0 to indexOf_Last_Unsorted_Element","if(left_Element>right_Element)","swap(left_Element,right_Element)"],
-        Algocolor: ["white","white","white","white"],
         arrayLen: 30,
         speed: 300,
-        width: "30px",
+        width: "25px",
         showValue: true,
         disableInput: false,
-        transition: "0.3s"
+        transition: "0.3s",
+        algorithm: 0,
+        BubblesortAlgo: ["for i=0 to last_Element","for j=0 to indexOf_Last_Unsorted_Element","if(left_Element>right_Element)","swap(left_Element,right_Element)"],
+        Algocolor: ["white","white","white","white"],
+        SelectionSortAlgo: ["Repeat (n-1) times","set first unsorted element as min","for each unsorted element","if element<min","set element as new min","swap min with first unsorted element"],
+        AlgocolorSelect: ["white","white","white","white","white","white"],
     } 
 
     componentDidMount() {
         this.arrayReset();
     }
 
-    arrayReset() {
+    arrayReset = () => {
         const new_array = []
         const arrlength = this.state.arrayLen
         for( let i=0; i<arrlength; i++) {
@@ -67,15 +74,15 @@ class Sorter extends Component {
     }
     
     barWidthCalculater = (arrlength) => {
-        let barwidth = "30"
+        let barwidth = "25"
         if(arrlength<25 && arrlength>20){
-            barwidth = "33"
-        } else if(arrlength>25 && arrlength<=30) {
+            barwidth = "30"
+        } else if(arrlength>25 && arrlength<30) {
             barwidth = "28"
         } 
-        else if(arrlength>10 && arrlength<=20) {
+        else if(arrlength>=10 && arrlength<=20) {
             barwidth = "40"
-        } else if(arrlength>30 && arrlength<=40) {
+        } else if(arrlength>=30 && arrlength<=40) {
             barwidth = "20"
         } else if(arrlength>40 && arrlength<=50) {
             barwidth = "10"
@@ -94,14 +101,28 @@ class Sorter extends Component {
         return barwidth;
     }
 
+    ShowAlgorithmHandler = (v) => {
+        console.log(v)
+        if(v==="1") {
+            this.setState({
+                algorithm: 1
+            })
+        } else if(v==="2") {
+            this.setState({
+                algorithm: 2
+            })
+        }
+    }
+
     bubblesorter = async () => {
         this.setState({
-            disableInput: true
+            disableInput: true,
+            algorithm: 1,
         })
-        console.log(this.state.arrayLen)
+        // console.log(this.state.arrayLen)
         let arr = this.state.array
         var len = arr.length
-        let i, j, flag=0;
+        let i, j;
         const colors = []
         let color = 'blueviolet'
         this.setState({
@@ -144,7 +165,6 @@ class Sorter extends Component {
                             this.setState({
                                 Algocolor: ["white","white","white","yellow"]
                             })
-                            flag = 1
                             // this.setState({color: "red"})
                         } 
                         else {
@@ -167,32 +187,117 @@ class Sorter extends Component {
         // this.setState({anim:arr})
     }
 
+    selectionSorter = async ()=> {
+        this.setState({
+            disableInput: true,
+            algorithm: 2,
+            AlgocolorSelect: ["yellow","white","white","white","white","white"]
+        })
+        let arr = this.state.array
+        let len = arr.length
+        let i,j, min_index;
+        let speed = this.state.speed
+        const colors = Array(arr.length).fill('blueviolet')
+        this.setState({
+            colors:colors,
+            AlgocolorSelect: ["white","yellow","white","white","white","white"]
+        })
+        await new Promise(resolve => setTimeout(resolve, speed));
+        for(i=0;i<len-1;i++) {
+            for(let l=i;l<len;l++) {
+                colors[l]="blueviolet"
+            }
+            this.setState({
+                colors:colors
+            })
+            min_index = i
+            colors[min_index]="red"
+                await new Promise(resolve => setTimeout(resolve, speed));
+                this.setState({
+                    colors:colors,
+                    AlgocolorSelect: ["white","white","yellow","white","white","white"]
+                })
+            for(j=i+1;j<len;j++) 
+            {
+                speed = this.state.speed
+                await new Promise(resolve => setTimeout(resolve, speed*0.3));
+                colors[j]="orange"
+                    // colors[len-1]="orange"
+                // console.log(colors)
+                this.setState({
+                    AlgocolorSelect: ["white","white","white","yellow","white","white"]
+                })
+                if(arr[j] < arr[min_index])
+                {
+                    
+                    min_index = j    
+                    colors[min_index]="red"
+                    for(let k=0;k<min_index;k++) {
+                        colors[k]=colors[k]!=="green" ? "blueviolet" : "green"
+                    }
+                    
+                    this.setState({
+                        colors:colors,
+                        AlgocolorSelect: ["white","white","white","white","yellow","white"]
+                    })
+                    await new Promise(resolve => setTimeout(resolve, speed));
+                }
+                colors[j-1]="blueviolet"
+                colors[min_index]="red"
+                this.setState({
+                    colors:colors
+                })
+                await new Promise(resolve => setTimeout(resolve, speed));
+            }
+            for(let m=i;m<len;m++) {
+                colors[m] = colors[m]!=="red" ? "blueviolet" : "pink"
+                colors[i]="pink"
+            }
+            this.setState({
+                colors:colors
+            })
+            await new Promise(resolve => setTimeout(resolve, speed));
+            this.setState({
+                AlgocolorSelect: ["white","white","white","white","white","yellow"]
+            })
+            await new Promise(resolve => setTimeout(resolve, speed));
+            swap(arr, i, min_index)
+            await new Promise(resolve => setTimeout(resolve, speed));
+            this.setState({
+                array: arr
+            })
+            colors[i]="green"
+            this.setState({
+                colors:colors
+            })
+            await new Promise(resolve => setTimeout(resolve, speed));
+        }
+        colors[len-1]="green"
+        colors[len-2]="green"
+        this.setState({
+            colors:colors,
+            disableInput: false,
+            AlgocolorSelect: ["white","white","white","white","white","white"]
+        })
+    }
+
     render() {
-        // const array = this.state.array
-        const { array, colors } = this.state;
-        // console.log(array)
         return (
             <div>
-                <h1>This is a sorter</h1>
-                <div className="container">
-                    {array.map((value, id) => (
-                        <span>
-                            <div 
-                                className="bar" 
-                                key={id} 
-                                style={{ height: value + 'px', backgroundColor: colors[id], width: this.state.width, transition: this.state.transition }} >
-                                {this.state.showValue ? <span className="number">{value}</span> : null }
-                            </div>
-                        </span>
-                    ))}
+                <Navbar />
+                <div className="main">
+                    <div className="row">
+                        <div className="col-2">
+                            <ToolBar state={this.state} clicked={this}/>
+                        </div>
+                        <div className="col-7 text-center">
+                            <ArrayDisplay state={this.state} />
+                        </div>
+                        <div className="col-3">
+                            <ShowAlgorithm value={this.state.algorithm} state={this.state} />
+                        </div>
+                    </div>
                 </div>
-                <button disabled = {this.state.disableInput} onClick={() => this.arrayReset()}>New array</button>
-                {/* <SortingAlgorithm arr={this.state.arr} /> */}
-                <button disabled = {this.state.disableInput} onClick={this.bubblesorter}>Sort</button>
-                <input type="range" min="10" max="301" onChange={this.speedChangeHandler}></input>
-                <input type="range" min="10" max="100" disabled = {this.state.disableInput} onChange={this.arraySizeHandler}></input>
-                <BubbleSort colorArr = {this.state.Algocolor} bubble={this.state.BubblesortAlgo} />
-                
             </div>
         )
     }

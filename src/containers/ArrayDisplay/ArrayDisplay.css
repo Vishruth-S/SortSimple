@@ -1,0 +1,20 @@
+.array-container{
+
+}
+
+.bar {
+    /* width: 30px; */
+    text-align: left;
+    /* background-color: blueviolet; */
+    /* transition: 0s; */
+    display: inline-block;
+    margin: 0 0.8px;
+    position: relative;
+}
+
+.number {
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
