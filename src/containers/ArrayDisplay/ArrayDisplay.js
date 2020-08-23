@@ -15,6 +15,7 @@ const ArrayDisplay = (props) => {
                                 {props.state.showValue ? <span className="number">{value}</span> : null }
                             </div>
                     ))}
+                    <div className="temp-bar"></div>
                 </div>
     )
 }

@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+.head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.algo-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+}

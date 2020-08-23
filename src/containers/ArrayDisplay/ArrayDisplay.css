@@ -1,7 +1,16 @@
 .array-container{
-
+    background-color: #120e28;
+    height: 540px;
+    padding-top: 38px;
 }
-
+.temp-bar{
+    height: 500px;
+    background-color:white;
+    text-align: left;
+    display: inline-block;
+    margin: 0 0.8px;
+    position: relative;
+}
 .bar {
     /* width: 30px; */
     text-align: left;
@@ -17,4 +26,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 13px;
+    margin-left: 2px;
 }

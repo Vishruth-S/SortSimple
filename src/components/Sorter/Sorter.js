@@ -42,7 +42,7 @@ class Sorter extends Component {
     }
 
     speedChangeHandler = (event) => {
-        let Actualspeed = 301 - event.target.value
+        let Actualspeed = 601 - event.target.value
         this.setState(
             {speed: Actualspeed}
         )
@@ -78,18 +78,24 @@ class Sorter extends Component {
         if(arrlength<25 && arrlength>20){
             barwidth = "30"
         } else if(arrlength>25 && arrlength<30) {
-            barwidth = "28"
+            barwidth = "26"
         } 
         else if(arrlength>=10 && arrlength<=20) {
             barwidth = "40"
-        } else if(arrlength>=30 && arrlength<=40) {
+        } else if(arrlength>=30 && arrlength<40) {
             barwidth = "20"
-        } else if(arrlength>40 && arrlength<=50) {
+        } else if(arrlength>=40 && arrlength<=50) {
+            barwidth = "15"
+        } else if(arrlength>50 && arrlength<=60) {
+            barwidth = "12"
+        } else if(arrlength>60 && arrlength<=70) {
             barwidth = "10"
-        } else if(arrlength>50 && arrlength<=70) {
+        } else if(arrlength>70 && arrlength<=80) {
             barwidth = "8"
-        } else if(arrlength>70) {
-            barwidth = "5"
+        } else if(arrlength>80 && arrlength<=90) {
+            barwidth = "7"
+        } else if(arrlength>=90) {
+            barwidth = "6"
         }
         let barwidthNum = Number(barwidth)
         if(barwidthNum<30) {
@@ -182,7 +188,7 @@ class Sorter extends Component {
                     disableInput: false
                 })   
                 this.setState({
-                    Algocolor: ["yellow","white","white","white"]
+                    Algocolor: ["white","white","white","white"]
                 })
         // this.setState({anim:arr})
     }
@@ -282,15 +288,16 @@ class Sorter extends Component {
     }
 
     render() {
+        console.log(this.state.speed)
         return (
             <div>
                 <Navbar />
                 <div className="main">
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-2 toolbar">
                             <ToolBar state={this.state} clicked={this}/>
                         </div>
-                        <div className="col-7 text-center">
+                        <div className="col-7 array-display">
                             <ArrayDisplay state={this.state} />
                         </div>
                         <div className="col-3">
