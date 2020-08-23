@@ -20,7 +20,9 @@ class ToolBar extends Component {
             return this.props.clicked.bubblesorter()
         } else if(this.state.value==="2") {
             return this.props.clicked.selectionSorter()
-        } else {
+        } else if(this.state.value==="3") {
+            return this.props.clicked.insertionSorter()
+        }{
             alert("Please select Algorithm")
         }
     }
@@ -37,10 +39,11 @@ class ToolBar extends Component {
                 <div className="tool-element tool-sort">
                     <div>Choose Sorting Algorithm</div>
                     <div >
-                    <select className="selector" disabled = {this.props.state.disableInput} onChange={this.optionChangeHandler}>
-                        <option className="select-option-disabled" value="0" selected disabled>Select Algorithm</option>
+                    <select defaultValue="0" className="selector" disabled = {this.props.state.disableInput} onChange={this.optionChangeHandler}>
+                        <option className="select-option-disabled" value="0" disabled>Select Algorithm</option>
                         <option className="select-option" value="1">BubbleSort</option>
                         <option className="select-option" value="2">SelectionSort</option> 
+                        <option className="select-option" value="3">InsertionSort</option> 
                         {/* <option value="3">SelectionSort</option>  */}
                     </select>
                     </div>

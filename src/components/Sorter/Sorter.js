@@ -24,6 +24,7 @@ class Sorter extends Component {
         Algocolor: ["white","white","white","white"],
         SelectionSortAlgo: ["Repeat (n-1) times","set first unsorted element as min","for each unsorted element","if element<min","set element as new min","swap min with first unsorted element"],
         AlgocolorSelect: ["white","white","white","white","white","white"],
+        InsertionSortAlgo: ["Mark first element as sorted","for each unsorted x","temp=x","for j=last_Sorted_Index to 0","if temp < current element[j]","move temp to the left by 1"]
     } 
 
     componentDidMount() {
@@ -108,7 +109,6 @@ class Sorter extends Component {
     }
 
     ShowAlgorithmHandler = (v) => {
-        console.log(v)
         if(v==="1") {
             this.setState({
                 algorithm: 1
@@ -116,6 +116,10 @@ class Sorter extends Component {
         } else if(v==="2") {
             this.setState({
                 algorithm: 2
+            })
+        } else if(v==="3") {
+            this.setState({
+                algorithm: 3
             })
         }
     }
@@ -287,8 +291,95 @@ class Sorter extends Component {
         })
     }
 
+    insertionSorter = async () => {
+        this.setState({
+            disableInput: true,
+            algorithm: 3,
+            AlgocolorSelect: ["white","yellow","white","white","white","white"]
+        })
+        let arr = this.state.array
+        let len = arr.length
+        let colors = Array(arr.length).fill('blueviolet')
+        let speed = this.state.speed
+        await new Promise(resolve => setTimeout(resolve, speed*0.8));
+        for(let i=0;i<len;i++) {
+            let temp = arr[i]
+            if(i!==0) {
+                colors[i-1]='orange'
+            }
+            colors[i]='red'
+            // colors[i+1]='red'
+            this.setState({
+                colors:colors,
+                AlgocolorSelect: ["white","white","yellow","white","white","white"]
+            })
+            await new Promise(resolve => setTimeout(resolve, speed));
+            this.setState({
+                AlgocolorSelect: ["white","white","white","yellow","white","white"]
+            })
+            await new Promise(resolve => setTimeout(resolve, speed*0.8));
+            for(let j=i-1;j>=0;j--) {
+                speed = this.state.speed
+                let flag=0
+                this.setState({
+                    AlgocolorSelect: ["white","white","white","white","yellow","white"]
+                })
+                await new Promise(resolve => setTimeout(resolve, speed));
+                if(temp<arr[j]) {
+                    flag=0
+                    swap(arr, j, j+1)
+                    colors[j]='red'
+                    colors[j+1]='orange'
+                    this.setState({
+                        colors:colors,
+                        AlgocolorSelect: ["white","white","white","white","white","yellow"]
+                    })
+                    await new Promise(resolve => setTimeout(resolve, speed));
+                    this.setState({
+                        array: arr,
+                        colors:colors
+                    })
+                    // await new Promise(resolve => setTimeout(resolve, 1000));
+                } else {
+                    flag++
+                }
+                if(flag===1)
+                {
+                    let k=i
+                    while(k) {
+                        colors[k-1]='orange'
+                        k--
+                    }
+                    this.setState({
+                        colors:colors
+                    })
+                    break
+                }
+                // await new Promise(resolve => setTimeout(resolve, speed));
+                if(flag) {
+                    colors[j]='orange'
+                    this.setState({
+                        colors:colors
+                    })
+                }
+            }
+            colors[0]='orange'
+            this.setState({
+                colors:colors
+            })
+        }
+        colors = Array(arr.length).fill('green')
+        this.setState({
+            array: arr,
+            colors: colors,
+            AlgocolorSelect: Array(6).fill("white"),
+            disableInput: false,
+        })
+        
+    }
+
     render() {
-        console.log(this.state.speed)
+        // console.log(this.state.speed)
         return (
             <div>
                 <Navbar />
