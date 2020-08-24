@@ -47,7 +47,7 @@ class Sorter extends Component {
         this.setState(
             {speed: Actualspeed}
         )
-        if(Actualspeed > 100) {
+        if(Actualspeed > 200) {
             this.setState({transition: "0.3s"})
         } else {
             this.setState({transition: "0s"})

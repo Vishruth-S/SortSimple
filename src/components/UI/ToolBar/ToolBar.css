@@ -14,6 +14,10 @@
     background: #4cecb9;
     transition: 0.3s;
 }
+.tool-button:disabled {
+  background: gray;
+  transition: 0.3s;
+}
 
 .tool-array {
     margin-top: 40px;
@@ -53,6 +57,12 @@ input[type="range"] {
     -webkit-appearance: none;
     /* width: 100%; */
   }
+  input[type="range"]:disabled::-webkit-slider-thumb {
+    background-color: gray;
+  }
+  input[type="range"]:disabled:hover::-webkit-slider-thumb {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
@@ -76,6 +86,12 @@ input[type="range"] {
     border: 2px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
+  input[type="range"]:hover::-webkit-slider-thumb {
+    background-color: #10da9a;
+  }
+  input[type="range"]:disabled:hover::-webkit-slider-thumb {
+    background-color: gray;
+  }
   input[type="range"]::-moz-range-thumb {
     width: 2em;
     height: 2em;
@@ -95,7 +111,7 @@ input[type="range"] {
     cursor: pointer;
   }
   input[type="range"]:hover::-webkit-slider-thumb {
-    border-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.9);
   }
   input[type="range"]:hover::-moz-range-thumb {
     border-color: rgba(255, 255, 255, 0.7);
