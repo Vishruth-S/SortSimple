@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SortVisual/static/css/main.06cecd73.chunk.css",
-    "main.js": "/SortVisual/static/js/main.bc16146a.chunk.js",
-    "main.js.map": "/SortVisual/static/js/main.bc16146a.chunk.js.map",
+    "main.js": "/SortVisual/static/js/main.4c63cb5a.chunk.js",
+    "main.js.map": "/SortVisual/static/js/main.4c63cb5a.chunk.js.map",
     "runtime-main.js": "/SortVisual/static/js/runtime-main.759182a4.js",
     "runtime-main.js.map": "/SortVisual/static/js/runtime-main.759182a4.js.map",
     "static/css/2.11829350.chunk.css": "/SortVisual/static/css/2.11829350.chunk.css",
     "static/js/2.9e400ad0.chunk.js": "/SortVisual/static/js/2.9e400ad0.chunk.js",
     "static/js/2.9e400ad0.chunk.js.map": "/SortVisual/static/js/2.9e400ad0.chunk.js.map",
     "index.html": "/SortVisual/index.html",
-    "precache-manifest.38d0fb18d53c3faf4d3d8df8ea816b93.js": "/SortVisual/precache-manifest.38d0fb18d53c3faf4d3d8df8ea816b93.js",
+    "precache-manifest.0f94547cb78ac881593790dde4e470d2.js": "/SortVisual/precache-manifest.0f94547cb78ac881593790dde4e470d2.js",
     "service-worker.js": "/SortVisual/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/SortVisual/static/css/2.11829350.chunk.css.map",
     "static/css/main.06cecd73.chunk.css.map": "/SortVisual/static/css/main.06cecd73.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.11829350.chunk.css",
     "static/js/2.9e400ad0.chunk.js",
     "static/css/main.06cecd73.chunk.css",
-    "static/js/main.bc16146a.chunk.js"
+    "static/js/main.4c63cb5a.chunk.js"
   ]
 }
