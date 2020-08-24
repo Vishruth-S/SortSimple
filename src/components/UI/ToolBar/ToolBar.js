@@ -53,7 +53,7 @@ class ToolBar extends Component {
                 </div>
                 <div className="tool-element tool-speed">
                     <div>Change Speed</div>
-                    <input type="range" min="10" max="601" defaultValue="300" onChange={this.props.clicked.speedChangeHandler}></input>
+                    <input type="range" min="10" max="601" value={601-this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
                 </div>
             </div>
         )

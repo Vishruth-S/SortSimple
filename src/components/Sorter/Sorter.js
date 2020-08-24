@@ -234,12 +234,11 @@ class Sorter extends Component {
                     this.setState({colors: colors });
                 }
                 this.setState({
-                    disableInput: false
-                })   
-                this.setState({
+                    disableInput: false,
+                    speed: 300,
+                    transition: "0.3s",
                     Algocolor: ["white","white","white","white"]
                 })
-        // this.setState({anim:arr})
     }
 
     selectionSorter = async ()=> {
@@ -332,6 +331,8 @@ class Sorter extends Component {
         this.setState({
             colors:colors,
             disableInput: false,
+            speed: 300,
+            transition: "0.3s",
             AlgocolorSelect: ["white","white","white","white","white","white"]
         })
     }
@@ -419,6 +420,8 @@ class Sorter extends Component {
             colors: colors,
             AlgocolorSelect: Array(6).fill("white"),
             disableInput: false,
+            speed: 300,
+            transition: "0.3s"
         })
         
     }

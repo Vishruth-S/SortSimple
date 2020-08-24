@@ -4,9 +4,16 @@
     box-shadow: 1px -1px 20px 0px #00000094;
 }
 
+.nav-logo {
+    height: 60px;
+}
 
 @media (max-width: 600px) {
     .mynav {
         margin-bottom: 0px !important;
+    }
+    .nav-logo {
+        height: 40px;
+        width: 160px;
     }
 }
