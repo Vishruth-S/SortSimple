@@ -2,7 +2,7 @@
   "name": "sorter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vishruth-s.github.io/SortVisual/",
+  "homepage": "https://vishruth-s.github.io/SortSimple/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
