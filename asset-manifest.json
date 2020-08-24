@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/SortVisual/static/css/main.7a1c0508.chunk.css",
-    "main.js": "/SortVisual/static/js/main.6e64a0f4.chunk.js",
-    "main.js.map": "/SortVisual/static/js/main.6e64a0f4.chunk.js.map",
+    "main.css": "/SortVisual/static/css/main.3054d6ef.chunk.css",
+    "main.js": "/SortVisual/static/js/main.c5a70fab.chunk.js",
+    "main.js.map": "/SortVisual/static/js/main.c5a70fab.chunk.js.map",
     "runtime-main.js": "/SortVisual/static/js/runtime-main.759182a4.js",
     "runtime-main.js.map": "/SortVisual/static/js/runtime-main.759182a4.js.map",
     "static/css/2.11829350.chunk.css": "/SortVisual/static/css/2.11829350.chunk.css",
     "static/js/2.06c62bfb.chunk.js": "/SortVisual/static/js/2.06c62bfb.chunk.js",
     "static/js/2.06c62bfb.chunk.js.map": "/SortVisual/static/js/2.06c62bfb.chunk.js.map",
     "index.html": "/SortVisual/index.html",
-    "precache-manifest.eac15ff95c4d964cd6217d72436d7cc8.js": "/SortVisual/precache-manifest.eac15ff95c4d964cd6217d72436d7cc8.js",
+    "precache-manifest.595e7fe8f1703c77a9a0c94dcabda7c0.js": "/SortVisual/precache-manifest.595e7fe8f1703c77a9a0c94dcabda7c0.js",
     "service-worker.js": "/SortVisual/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/SortVisual/static/css/2.11829350.chunk.css.map",
-    "static/css/main.7a1c0508.chunk.css.map": "/SortVisual/static/css/main.7a1c0508.chunk.css.map",
+    "static/css/main.3054d6ef.chunk.css.map": "/SortVisual/static/css/main.3054d6ef.chunk.css.map",
     "static/js/2.06c62bfb.chunk.js.LICENSE.txt": "/SortVisual/static/js/2.06c62bfb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.759182a4.js",
     "static/css/2.11829350.chunk.css",
     "static/js/2.06c62bfb.chunk.js",
-    "static/css/main.7a1c0508.chunk.css",
-    "static/js/main.6e64a0f4.chunk.js"
+    "static/css/main.3054d6ef.chunk.css",
+    "static/js/main.c5a70fab.chunk.js"
   ]
 }

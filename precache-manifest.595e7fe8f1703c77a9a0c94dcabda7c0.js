@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b17b2434d9c02df521dc5dcdbfefb001",
+    "revision": "529510e734b6ff2123dfebffd929511b",
     "url": "/SortVisual/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SortVisual/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "648095ad00325345f374",
-    "url": "/SortVisual/static/css/main.7a1c0508.chunk.css"
+    "revision": "3a7c101c6139b76f9ae2",
+    "url": "/SortVisual/static/css/main.3054d6ef.chunk.css"
   },
   {
     "revision": "6cf6cad5f98df0b6b290",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SortVisual/static/js/2.06c62bfb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "648095ad00325345f374",
-    "url": "/SortVisual/static/js/main.6e64a0f4.chunk.js"
+    "revision": "3a7c101c6139b76f9ae2",
+    "url": "/SortVisual/static/js/main.c5a70fab.chunk.js"
   },
   {
     "revision": "ad5db896aa52d14801e3",
