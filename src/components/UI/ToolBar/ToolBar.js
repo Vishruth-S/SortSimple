@@ -22,19 +22,19 @@ class ToolBar extends Component {
             return this.props.clicked.selectionSorter()
         } else if(this.state.value==="3") {
             return this.props.clicked.insertionSorter()
-        }{
+        } else {
             alert("Please select Algorithm")
         }
     }
     render() {
         return (
-            <div>
+            <div className="tool-container">
                 <div className="tool-element tool-array">
                     <button className="tool-button" disabled = {this.props.state.disableInput} onClick={this.props.clicked.arrayReset}>New array</button>
                 </div>
-                <div className="tool-element">
+                <div className="tool-element tool-array-size">
                     <div>Change Array Size</div>
-                    <input type="range" min="10" max="100"  disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
+                    <input type="range" min="10" max="100" defaultValue="25" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
                 </div>
                 <div className="tool-element tool-sort">
                     <div>Choose Sorting Algorithm</div>
@@ -48,12 +48,12 @@ class ToolBar extends Component {
                     </select>
                     </div>
                 </div>
-                <div className="tool-element">
+                <div className="tool-element tool-sort-btn">
                     <button className="tool-button" disabled={this.props.state.disableInput} onClick={this.sortMethodHandler}>Sort</button>
                 </div>
                 <div className="tool-element tool-speed">
                     <div>Change Speed</div>
-                    <input type="range" min="10" max="601" onChange={this.props.clicked.speedChangeHandler}></input>
+                    <input type="range" min="10" max="601" defaultValue="300" onChange={this.props.clicked.speedChangeHandler}></input>
                 </div>
             </div>
         )

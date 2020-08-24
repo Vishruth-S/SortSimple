@@ -1,3 +1,12 @@
 .mynav {
     margin-bottom: 50px !important;
+    background-color: #ececec !important;
+    box-shadow: 1px -1px 20px 0px #00000094;
+}
+
+
+@media (max-width: 600px) {
+    .mynav {
+        margin-bottom: 0px !important;
+    }
 }

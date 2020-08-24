@@ -1,5 +1,6 @@
 .main {
     max-width: 1520px;
+    overflow: hidden;
     margin: 0px 30px;
 }
 .toolbar {
@@ -12,4 +13,16 @@
 .array-display {
     text-align: center;
     padding-left: 0px !important;
+}
+
+@media (max-width: 600px) {
+    .toolbar {
+        padding-top: 10px;
+    }
+    .main {
+        margin: 0px 0px;
+    }
+    .array-display {
+        padding: 0px !important;
+    }
 }

@@ -4,25 +4,13 @@ import './Navbar.css'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light mynav">
-            <a className="navbar-brand" href="#">SortVisual</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
+        <nav className="navbar navbar-expand navbar-light mynav">
+            <span className="navbar-brand" >SortVisual</span>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
-                    {/* <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Features</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Pricing</a>
-                    </li> */}
                 </ul>
-                <span className="navbar-text">
-                    Made by VS
+                <span className="navbar-text float-left">
+                    Made by <a href="https://vishruth-s.github.io/Me/">VS</a>
                 </span>
             </div>
         </nav>

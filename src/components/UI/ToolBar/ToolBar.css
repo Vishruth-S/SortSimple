@@ -16,6 +16,7 @@
 }
 .tool-button:disabled {
   background: gray;
+  color: rgb(165, 165, 165);
   transition: 0.3s;
 }
 
@@ -41,6 +42,51 @@
 .selector:focus {
     outline: none;
 }
+
+@media (max-width: 600px) {
+  .tool-container {
+    padding: 10px 35px;
+  }
+  .tool-element {
+    margin: 3px 0px;
+  }
+  .tool-array {
+    float: left;
+  }
+  .tool-sort {
+    float: left;
+  }
+  .tool-speed {
+    margin-top: 10px;
+  }
+  .tool-sort-btn {
+    margin-top: 20px;
+    margin-left: 240px;
+  }
+  .tool-array-size {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tool-container {
+    padding: 10px 20px;
+  }
+  .tool-element {
+    margin: 3px 0px;
+  }
+  .tool-speed {
+    margin-top: 10px;
+  }
+  .tool-sort-btn {
+    margin-top: 20px;
+    margin-left: 210px;
+  }
+  .tool-array-size {
+    margin-left: 190px;
+  }
+}
+
 
 /* select */
 
@@ -69,6 +115,9 @@ input[type="range"] {
   input[type="range"]:focus {
     outline: none;
   }
+  input[type="range"]:hover:disabled {
+    cursor: default;
+  }
   input[type="range"]::-ms-track {
     width: 100%;
     cursor: pointer;
@@ -91,6 +140,7 @@ input[type="range"] {
   }
   input[type="range"]:disabled:hover::-webkit-slider-thumb {
     background-color: gray;
+    cursor: default;
   }
   input[type="range"]::-moz-range-thumb {
     width: 2em;
@@ -134,6 +184,9 @@ input[type="range"] {
     height: 1em;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     background-color: transparent;
+  }
+  input[type="range"]:disabled::-webkit-slider-runnable-track{
+    cursor: default;
   }
   input[type="range"]::-moz-range-track {
     width: 100%;

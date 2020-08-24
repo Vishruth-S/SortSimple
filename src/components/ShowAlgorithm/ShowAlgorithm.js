@@ -7,7 +7,7 @@ import InsertionSort from '../SortingAlgorithms/InsertionSort'
 import './ShowAlgorithm.css'
 
 const ShowAlgorithm = (props) => {
-    let algo = ""
+    let algo = "{Select Algorithm}"
     if(props.value===1) {
         algo = <BubbleSort colorArr = {props.state.Algocolor} bubble={props.state.BubblesortAlgo} />
     } else if(props.value===2) {
@@ -18,7 +18,7 @@ const ShowAlgorithm = (props) => {
     return (
         <div>
             <h3 className="head">ALGORITHM</h3>
-            <span className="algo-text">{algo}</span>
+            <div className="algo-text">{algo}</div>
         </div>
     )
 }

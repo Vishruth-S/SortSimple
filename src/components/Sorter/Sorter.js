@@ -13,7 +13,7 @@ class Sorter extends Component {
     state = {
         array: [],
         colors: [],
-        arrayLen: 30,
+        arrayLen: 25,
         speed: 300,
         width: "25px",
         showValue: true,
@@ -37,8 +37,12 @@ class Sorter extends Component {
         for( let i=0; i<arrlength; i++) {
             new_array.push(randomNumber(30,500))
         }
-
-        this.setState({array: new_array, colors: Array(new_array.length).fill('blueviolet')})
+        let barwidth = this.barWidthCalculater(arrlength)
+        this.setState({
+            width: barwidth
+        })
+        let final_array = this.arrayHeightHandler(new_array)
+        this.setState({array: final_array, colors: Array(final_array.length).fill('blueviolet')})
         // this.setState({anim: new_array})
     }
 
@@ -57,9 +61,6 @@ class Sorter extends Component {
 
     arraySizeHandler = (event) => {
         // console.log(this.state.arrayLen)
-        this.setState({
-            transition: "0s"
-        })
         const new_array = []
         const arrlength = event.target.value
         let barwidth = this.barWidthCalculater(arrlength)
@@ -69,24 +70,66 @@ class Sorter extends Component {
         for( let i=0; i<arrlength; i++) {
             new_array.push(randomNumber(30,500))
         }
+        let final_array = this.arrayHeightHandler(new_array)
         this.setState({arrayLen: event.target.value})
-        this.setState({array: new_array, colors: Array(new_array.length).fill('blueviolet')})
+        this.setState({array: final_array, colors: Array(final_array.length).fill('blueviolet')})
         // console.log(this.state.arrayLen)
     }
+
+    screenSizeHandler = (barNum) => {
+        let screen_width = window.innerWidth
+        if(screen_width < 1400 && screen_width>600) {
+            barNum*=0.75
+            barNum = barNum.toFixed(0)
+            let barwidth = barNum.toString()
+            return barwidth
+        } else if(screen_width <= 600 && screen_width>400) {
+            barNum*=0.3
+            barNum = barNum.toFixed(0)
+            let barwidth = barNum.toString()
+            return barwidth
+        } else if(screen_width <= 400) {
+            barNum*=0.28
+            barNum = barNum.toFixed(0)
+            let barwidth = barNum.toString()
+            return barwidth
+        } else {
+            let barwidth = barNum.toString()
+            return barwidth
+        }
+        
+    }
     
+    arrayHeightHandler = (small_arr) => {
+        let screen_width = window.innerWidth
+        if(screen_width <= 600) {
+            for(let i=0;i<small_arr.length;i++) {
+                let ele = small_arr[i]
+                ele*=0.7
+                ele=ele.toFixed(0)
+                small_arr[i]=Number(ele)
+            }
+        } 
+        return small_arr
+    }
+
     barWidthCalculater = (arrlength) => {
         let barwidth = "25"
         if(arrlength<25 && arrlength>20){
-            barwidth = "30"
+            barwidth = "27"
         } else if(arrlength>25 && arrlength<30) {
-            barwidth = "26"
+            barwidth = "23"
         } 
         else if(arrlength>=10 && arrlength<=20) {
-            barwidth = "40"
-        } else if(arrlength>=30 && arrlength<40) {
+            barwidth = "33"
+        } else if(arrlength>=30 && arrlength<35) {
             barwidth = "20"
-        } else if(arrlength>=40 && arrlength<=50) {
-            barwidth = "15"
+        } else if(arrlength>=35 && arrlength<40) {
+            barwidth = "17"
+        } else if(arrlength>=40 && arrlength<=45) {
+            barwidth = "14"
+        } else if(arrlength>45 && arrlength<=50) {
+            barwidth = "13"
         } else if(arrlength>50 && arrlength<=60) {
             barwidth = "12"
         } else if(arrlength>60 && arrlength<=70) {
@@ -99,10 +142,12 @@ class Sorter extends Component {
             barwidth = "6"
         }
         let barwidthNum = Number(barwidth)
-        if(barwidthNum<30) {
-            this.setState({showValue: false, transition: "0s"})
+        barwidth = this.screenSizeHandler(barwidthNum)
+        barwidthNum = Number(barwidth)
+        if(barwidthNum<20) {
+            this.setState({showValue: false})
         } else {
-            this.setState({showValue: true, transition: "0.3s"})
+            this.setState({showValue: true})
         }
         barwidth += "px"
         return barwidth;
@@ -385,13 +430,13 @@ class Sorter extends Component {
                 <Navbar />
                 <div className="main">
                     <div className="row">
-                        <div className="col-2 toolbar">
+                        <div className="col-md-2 col-12 toolbar">
                             <ToolBar state={this.state} clicked={this}/>
                         </div>
-                        <div className="col-7 array-display">
+                        <div className="col-md-7 col-12 array-display">
                             <ArrayDisplay state={this.state} />
                         </div>
-                        <div className="col-3">
+                        <div className="col-md-3 col-12">
                             <ShowAlgorithm value={this.state.algorithm} state={this.state} />
                         </div>
                     </div>

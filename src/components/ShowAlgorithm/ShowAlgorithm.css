@@ -9,3 +9,13 @@
     font-family: 'Roboto Mono', monospace;
     font-size: 13px;
 }
+
+@media (max-width: 600px) {
+    .head {
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+    .algo-text {
+        margin-left: 10px;
+    }
+}

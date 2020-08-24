@@ -26,6 +26,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 2px;
+}
+
+@media (max-width: 600px) {
+    .array-container{
+        height: 410px;
+    }
+    .temp-bar {
+        height: 370px;
+    }
 }
