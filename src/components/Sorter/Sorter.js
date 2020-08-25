@@ -20,7 +20,7 @@ class Sorter extends Component {
         disableInput: false,
         transition: "0.3s",
         algorithm: 0,
-        BubblesortAlgo: ["for i=0 to last_Element","for j=0 to indexOf_Last_Unsorted_Element","if(left_Element>right_Element)","swap(left_Element,right_Element)"],
+        BubblesortAlgo: ["for i=0 to last_Element","for j=0 to Last_Unsorted_Element","if left_Element>right_Element","swap(left_Element,right_Element)"],
         Algocolor: ["white","white","white","white"],
         SelectionSortAlgo: ["Repeat (n-1) times","set first unsorted element as min","for each unsorted element","if element<min","set element as new min","swap min with first unsorted element"],
         AlgocolorSelect: ["white","white","white","white","white","white"],
@@ -43,7 +43,6 @@ class Sorter extends Component {
         })
         let final_array = this.arrayHeightHandler(new_array)
         this.setState({array: final_array, colors: Array(final_array.length).fill('blueviolet')})
-        // this.setState({anim: new_array})
     }
 
     speedChangeHandler = (event) => {
@@ -56,11 +55,9 @@ class Sorter extends Component {
         } else {
             this.setState({transition: "0s"})
         }
-        // console.log(this.state.transition)
     }
 
     arraySizeHandler = (event) => {
-        // console.log(this.state.arrayLen)
         const new_array = []
         const arrlength = event.target.value
         let barwidth = this.barWidthCalculater(arrlength)
@@ -73,7 +70,6 @@ class Sorter extends Component {
         let final_array = this.arrayHeightHandler(new_array)
         this.setState({arrayLen: event.target.value})
         this.setState({array: final_array, colors: Array(final_array.length).fill('blueviolet')})
-        // console.log(this.state.arrayLen)
     }
 
     screenSizeHandler = (barNum) => {
@@ -174,8 +170,7 @@ class Sorter extends Component {
             disableInput: true,
             algorithm: 1,
         })
-        // console.log(this.state.arrayLen)
-        let arr = this.state.array
+        let arr = [...this.state.array]
         var len = arr.length
         let i, j;
         const colors = []
@@ -203,10 +198,8 @@ class Sorter extends Component {
                             }
                             colors[k] = color
                         }
-                        // console.log(colors)
                         await new Promise(resolve => setTimeout(resolve, speed));
                         this.setState({ array: arr})
-                        // await new Promise(resolve => setTimeout(resolve, 1000));
                         this.setState({
                             Algocolor: ["white","white","yellow","white"]
                         })
@@ -220,13 +213,10 @@ class Sorter extends Component {
                             this.setState({
                                 Algocolor: ["white","white","white","yellow"]
                             })
-                            // this.setState({color: "red"})
                         } 
                         else {
                             await new Promise(resolve => setTimeout(resolve, speed));
                         }
-                        // this.setState({array:arr, color: "blueviolet"})
-                        // const colors = arr.map((item, index) => (this.state.array[index] === item ? 'red' : 'blueviolet'));
                         await new Promise(resolve => setTimeout(resolve, speed));
                         this.setState({colors:colors})
                     }
@@ -247,7 +237,7 @@ class Sorter extends Component {
             algorithm: 2,
             AlgocolorSelect: ["yellow","white","white","white","white","white"]
         })
-        let arr = this.state.array
+        let arr = [...this.state.array]
         let len = arr.length
         let i,j, min_index;
         let speed = this.state.speed
@@ -276,8 +266,6 @@ class Sorter extends Component {
                 speed = this.state.speed
                 await new Promise(resolve => setTimeout(resolve, speed*0.3));
                 colors[j]="orange"
-                    // colors[len-1]="orange"
-                // console.log(colors)
                 this.setState({
                     AlgocolorSelect: ["white","white","white","yellow","white","white"]
                 })
@@ -343,7 +331,7 @@ class Sorter extends Component {
             algorithm: 3,
             AlgocolorSelect: ["white","yellow","white","white","white","white"]
         })
-        let arr = this.state.array
+        let arr = [...this.state.array]
         let len = arr.length
         let colors = Array(arr.length).fill('blueviolet')
         let speed = this.state.speed
@@ -354,7 +342,6 @@ class Sorter extends Component {
                 colors[i-1]='orange'
             }
             colors[i]='red'
-            // colors[i+1]='red'
             this.setState({
                 colors:colors,
                 AlgocolorSelect: ["white","white","yellow","white","white","white"]
@@ -385,7 +372,6 @@ class Sorter extends Component {
                         array: arr,
                         colors:colors
                     })
-                    // await new Promise(resolve => setTimeout(resolve, 1000));
                 } else {
                     flag++
                 }
@@ -401,7 +387,6 @@ class Sorter extends Component {
                     })
                     break
                 }
-                // await new Promise(resolve => setTimeout(resolve, speed));
                 if(flag) {
                     colors[j]='orange'
                     this.setState({
@@ -427,19 +412,18 @@ class Sorter extends Component {
     }
 
     render() {
-        // console.log(this.state.speed)
         return (
             <div>
                 <Navbar />
                 <div className="main">
                     <div className="row">
-                        <div className="col-md-2 col-12 toolbar">
+                        <div className="col-lg-2 col-12 toolbar">
                             <ToolBar state={this.state} clicked={this}/>
                         </div>
-                        <div className="col-md-7 col-12 array-display">
+                        <div className="col-lg-7 col-12 array-display">
                             <ArrayDisplay state={this.state} />
                         </div>
-                        <div className="col-md-3 col-12">
+                        <div className="col-lg-3 col-12">
                             <ShowAlgorithm value={this.state.algorithm} state={this.state} />
                         </div>
                     </div>

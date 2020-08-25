@@ -4,7 +4,7 @@ const InsertionSort = (props) => {
     return (
         <div>
             {props.insertion.map((value, id) => ( 
-                <div style = {{backgroundColor: props.colorArr[id], marginLeft: (id*20)+"px", height: "30px" }} key={id}>{value}</div>
+                <div style = {{backgroundColor: props.colorArr[id], marginLeft: (id*12)+"px", height: "30px" }} key={id}>{value}</div>
             ))}
         </div>
     )

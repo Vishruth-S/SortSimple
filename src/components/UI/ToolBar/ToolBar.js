@@ -44,7 +44,6 @@ class ToolBar extends Component {
                         <option className="select-option" value="1">BubbleSort</option>
                         <option className="select-option" value="2">SelectionSort</option> 
                         <option className="select-option" value="3">InsertionSort</option> 
-                        {/* <option value="3">SelectionSort</option>  */}
                     </select>
                     </div>
                 </div>
