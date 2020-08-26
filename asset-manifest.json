@@ -1,26 +1,32 @@
 {
   "files": {
-    "main.css": "/SortSimple/static/css/main.f437da50.chunk.css",
-    "main.js": "/SortSimple/static/js/main.6b14680e.chunk.js",
-    "main.js.map": "/SortSimple/static/js/main.6b14680e.chunk.js.map",
+    "main.css": "/SortSimple/static/css/main.6b050346.chunk.css",
+    "main.js": "/SortSimple/static/js/main.e8bc47e1.chunk.js",
+    "main.js.map": "/SortSimple/static/js/main.e8bc47e1.chunk.js.map",
     "runtime-main.js": "/SortSimple/static/js/runtime-main.dd2d0be9.js",
     "runtime-main.js.map": "/SortSimple/static/js/runtime-main.dd2d0be9.js.map",
     "static/css/2.11829350.chunk.css": "/SortSimple/static/css/2.11829350.chunk.css",
-    "static/js/2.6420e912.chunk.js": "/SortSimple/static/js/2.6420e912.chunk.js",
-    "static/js/2.6420e912.chunk.js.map": "/SortSimple/static/js/2.6420e912.chunk.js.map",
+    "static/js/2.ab20a483.chunk.js": "/SortSimple/static/js/2.ab20a483.chunk.js",
+    "static/js/2.ab20a483.chunk.js.map": "/SortSimple/static/js/2.ab20a483.chunk.js.map",
     "index.html": "/SortSimple/index.html",
-    "precache-manifest.796d2b324299e0bf38c428767488a8c2.js": "/SortSimple/precache-manifest.796d2b324299e0bf38c428767488a8c2.js",
+    "precache-manifest.80fe6a3c3d4f8e8e6bc0e4e65879b147.js": "/SortSimple/precache-manifest.80fe6a3c3d4f8e8e6bc0e4e65879b147.js",
     "service-worker.js": "/SortSimple/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/SortSimple/static/css/2.11829350.chunk.css.map",
-    "static/css/main.f437da50.chunk.css.map": "/SortSimple/static/css/main.f437da50.chunk.css.map",
-    "static/js/2.6420e912.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.6420e912.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/SortSimple/static/media/logo.ee6d1719.png"
+    "static/css/main.6b050346.chunk.css.map": "/SortSimple/static/css/main.6b050346.chunk.css.map",
+    "static/js/2.ab20a483.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.ab20a483.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/SortSimple/static/media/logo.ee6d1719.png",
+    "static/media/robot.jpg": "/SortSimple/static/media/robot.611c8969.jpg",
+    "static/media/robot2.jpg": "/SortSimple/static/media/robot2.353ec36f.jpg",
+    "static/media/robot3.jpg": "/SortSimple/static/media/robot3.34190fec.jpg",
+    "static/media/robot4.jpg": "/SortSimple/static/media/robot4.5754fb60.jpg",
+    "static/media/robot5.jpg": "/SortSimple/static/media/robot5.c2f723ff.jpg",
+    "static/media/sorter1.png": "/SortSimple/static/media/sorter1.3c442d83.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dd2d0be9.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.6420e912.chunk.js",
-    "static/css/main.f437da50.chunk.css",
-    "static/js/main.6b14680e.chunk.js"
+    "static/js/2.ab20a483.chunk.js",
+    "static/css/main.6b050346.chunk.css",
+    "static/js/main.e8bc47e1.chunk.js"
   ]
 }
