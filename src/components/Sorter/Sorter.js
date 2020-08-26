@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './Sorter.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import ModalGuide from '../../containers/Modal/ModalGuide'
 import Navbar from '../UI/Navbar/Navbar'
 import ArrayDisplay from '../../containers/ArrayDisplay/ArrayDisplay'
 import ToolBar from '../UI/ToolBar/ToolBar'
@@ -415,6 +416,7 @@ class Sorter extends Component {
         return (
             <div>
                 <Navbar />
+                <ModalGuide />
                 <div className="main">
                     <div className="row">
                         <div className="col-lg-2 col-12 toolbar">

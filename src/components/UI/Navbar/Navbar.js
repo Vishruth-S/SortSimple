@@ -7,7 +7,7 @@ import logo from '../../../Assets/img/logo.png'
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand navbar-light mynav">
-            <span className="navbar-brand" ><img className="nav-logo" src={logo} /></span>
+            <span className="navbar-brand" ><img className="nav-logo" alt="SortSimple_logo" src={logo} /></span>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                 </ul>
