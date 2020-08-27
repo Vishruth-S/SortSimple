@@ -52,7 +52,7 @@ class ModalGuide extends Component {
                     <Modal.Body>
                         <div className="robot-img-div"><img className="robot-img" src={robotimg1} alt="img"/></div>
                         <p>This short guide will walk you through the features of this application.</p>
-                        <p>If you want to dive right in, feel free to press the "Skip" button. Otherwise, press next</p>
+                        <p>If you want to dive right in, feel free to press the "Skip" button. Otherwise, press next.</p>
                     </Modal.Body>
                 </div>
                 <div style={{display: this.state.pagedisplay[1]}}>
@@ -76,14 +76,14 @@ class ModalGuide extends Component {
                     <Modal.Header><h5>Selcting an algorithm</h5></Modal.Header>
                     <Modal.Body>
                         <div className=".robot-img-div"><img className="sorter-img" src={sorter1} alt="img" /></div>
-                        <p>You can select any of the listed algorithms from the "select algorithm" drop-down menu</p>
-                        <p>This will also display the selected algorithm on the right</p>
+                        <p>You can select any of the listed algorithms from the "select algorithm" drop-down menu.</p>
+                        <p>This will also display the selected algorithm alongside.</p>
                     </Modal.Body>
                 </div>
                 <div style={{display: this.state.pagedisplay[4]}}>
                     <Modal.Header><h5>Meet the algorithms!</h5></Modal.Header>
                     <Modal.Body>
-                        <p>Not all algorithms are created equal. Here are the all algorithms listed with a brief description</p>
+                        <p>Not all algorithms are created equal. Here are the all algorithms listed with a brief description:</p>
                         <p>BubbleSort</p>
                         <p>SelectionSort</p>
                         <p>InsertionSort</p>
@@ -105,12 +105,14 @@ class ModalGuide extends Component {
                         <p>You can check out the source code for this project in my Github</p>
                     </Modal.Body>
                 </div>
-                <Modal.Footer>
-                    <button onClick={this.previousPage} style={{display:this.state.page===0 ? "none" : "block"}}>Previous</button>
-                    <button onClick={this.nextPage} style={{display:this.state.page===6 ? "none" : "block"}}>Next</button>
-                    <button onClick={this.hideModal} style={{display:this.state.page===6 ? "block" : "none"}}>Finish</button>
-                    <button onClick={this.hideModal}>Cancel</button>
-                </Modal.Footer>
+                <div className="my-footer">
+                    <div>
+                        <button className="modal-btn-outline" onClick={this.hideModal}>Skip</button>
+                    </div>
+                    <button className="previous modal-btn-fill" onClick={this.previousPage} style={{display:this.state.page===0 ? "none" : "block"}}>Previous</button>
+                    <button className="modal-btn-fill" onClick={this.nextPage} style={{display:this.state.page===6 ? "none" : "block"}}>Next</button>
+                    <button className="modal-btn-fill" onClick={this.hideModal} style={{display:this.state.page===6 ? "block" : "none"}}>Finish</button>
+                </div>
             </Modal>
           );
     }
