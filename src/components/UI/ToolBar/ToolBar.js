@@ -22,6 +22,12 @@ class ToolBar extends Component {
             return this.props.clicked.selectionSorter()
         } else if(this.state.value==="3") {
             return this.props.clicked.insertionSorter()
+        } else if(this.state.value==="4") {
+            return this.props.clicked.mergeSorter()
+        } else if(this.state.value==="5") {
+            return this.props.clicked.cocktailSorter()
+        } else if(this.state.value==="6") {
+            return this.props.clicked.countSorter()
         } else {
             alert("Please select Algorithm")
         }
@@ -34,7 +40,7 @@ class ToolBar extends Component {
                 </div>
                 <div className="tool-element tool-array-size">
                     <div>Change Array Size</div>
-                    <input type="range" min="10" max="100" defaultValue="25" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
+                    <input type="range" min="9" max="99" defaultValue="24" step="3" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
                 </div>
                 <div className="tool-element tool-sort">
                     <div>Choose Sorting Algorithm</div>
@@ -44,6 +50,9 @@ class ToolBar extends Component {
                         <option className="select-option" value="1">BubbleSort</option>
                         <option className="select-option" value="2">SelectionSort</option> 
                         <option className="select-option" value="3">InsertionSort</option> 
+                        <option className="select-option" value="4">MergeSort</option> 
+                        <option className="select-option" value="5">CocktailSort</option> 
+                        <option className="select-option" value="6">CountSort</option> 
                     </select>
                     </div>
                 </div>
@@ -52,7 +61,7 @@ class ToolBar extends Component {
                 </div>
                 <div className="tool-element tool-speed">
                     <div>Change Speed</div>
-                    <input type="range" min="10" max="601" value={601-this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
+                    <input type="range" min="10" max="401" value={401-this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
                 </div>
             </div>
         )
