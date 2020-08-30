@@ -54,7 +54,7 @@ class Sorter extends Component {
         this.setState(
             { speed: Actualspeed }
         )
-        if (Actualspeed > 300) {
+        if (Actualspeed > 200) {
             this.setState({ transition: "0.3s" })
         } else {
             this.setState({ transition: "0s" })
@@ -182,6 +182,10 @@ class Sorter extends Component {
             this.setState({
                 algorithm: 7
             })
+        } else if (v === "8") {
+            this.setState({
+                algorithm: 8
+            })
         }
     }
 
@@ -217,7 +221,7 @@ class Sorter extends Component {
                     colors[k] = color
                 }
                 if (speed !== 0) {
-                    await new Promise(resolve => setTimeout(resolve, speed));
+                    await sleep(speed)
                 }
                 this.setState({ array: arr })
                 this.setState({
@@ -228,7 +232,7 @@ class Sorter extends Component {
                         colors[j] = 'pink'
                         colors[j + 1] = 'pink'
                         this.setState({ colors: colors })
-                        await new Promise(resolve => setTimeout(resolve, speed));
+                        await sleep(speed)
                     }
                     swap(arr, j, j + 1);
                     this.setState({
@@ -237,10 +241,10 @@ class Sorter extends Component {
                 }
                 else {
                     if (speed !== 0) {
-                        await new Promise(resolve => setTimeout(resolve, speed));
+                        await sleep(speed)
                     }
                 }
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
                 this.setState({ colors: colors })
             }
             colors[len - i - 1] = 'green'
@@ -269,7 +273,7 @@ class Sorter extends Component {
             colors: colors,
             AlgocolorSelect: ["white", "yellow", "white", "white", "white", "white"]
         })
-        await new Promise(resolve => setTimeout(resolve, speed));
+        await sleep(speed)
         for (i = 0; i < len - 1; i++) {
             for (let l = i; l < len; l++) {
                 colors[l] = "blueviolet"
@@ -279,7 +283,7 @@ class Sorter extends Component {
             })
             min_index = i
             colors[min_index] = "red"
-            await new Promise(resolve => setTimeout(resolve, speed));
+            await sleep(speed)
             this.setState({
                 colors: colors,
                 AlgocolorSelect: ["white", "white", "yellow", "white", "white", "white"]
@@ -306,7 +310,7 @@ class Sorter extends Component {
                         AlgocolorSelect: ["white", "white", "white", "white", "yellow", "white"]
                     })
                     if (speed !== 0) {
-                        await new Promise(resolve => setTimeout(resolve, speed));
+                        await sleep(speed)
                     }
                 }
                 colors[j - 1] = "blueviolet"
@@ -314,7 +318,7 @@ class Sorter extends Component {
                 this.setState({
                     colors: colors
                 })
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
             }
             for (let m = i; m < len; m++) {
                 colors[m] = colors[m] !== "red" ? "blueviolet" : "pink"
@@ -323,15 +327,15 @@ class Sorter extends Component {
             this.setState({
                 colors: colors
             })
-            await new Promise(resolve => setTimeout(resolve, speed));
+            await sleep(speed)
             this.setState({
                 AlgocolorSelect: ["white", "white", "white", "white", "white", "yellow"]
             })
             if (speed !== 0) {
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
             }
             swap(arr, i, min_index)
-            await new Promise(resolve => setTimeout(resolve, speed));
+            await sleep(speed)
             this.setState({
                 array: arr
             })
@@ -339,7 +343,7 @@ class Sorter extends Component {
             this.setState({
                 colors: colors
             })
-            await new Promise(resolve => setTimeout(resolve, speed));
+            await sleep(speed)
         }
         colors[len - 1] = "green"
         colors[len - 2] = "green"
@@ -362,7 +366,7 @@ class Sorter extends Component {
         let len = arr.length
         let colors = Array(arr.length).fill('blueviolet')
         let speed = this.state.speed
-        await new Promise(resolve => setTimeout(resolve, speed * 0.8));
+        await sleep(speed*0.6)
         for (let i = 0; i < len; i++) {
             let temp = arr[i]
             if (i !== 0) {
@@ -373,18 +377,18 @@ class Sorter extends Component {
                 colors: colors,
                 AlgocolorSelect: ["white", "white", "yellow", "white", "white", "white"]
             })
-            await new Promise(resolve => setTimeout(resolve, speed));
+            await sleep(speed*0.6)
             this.setState({
                 AlgocolorSelect: ["white", "white", "white", "yellow", "white", "white"]
             })
-            await new Promise(resolve => setTimeout(resolve, speed * 0.8));
+            await sleep(speed*0.6)
             for (let j = i - 1; j >= 0; j--) {
                 speed = this.state.speed
                 let flag = 0
                 this.setState({
                     AlgocolorSelect: ["white", "white", "white", "white", "yellow", "white"]
                 })
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
                 if (temp < arr[j]) {
                     flag = 0
                     swap(arr, j, j + 1)
@@ -394,7 +398,7 @@ class Sorter extends Component {
                         colors: colors,
                         AlgocolorSelect: ["white", "white", "white", "white", "white", "yellow"]
                     })
-                    await new Promise(resolve => setTimeout(resolve, speed));
+                    await sleep(speed)
                     this.setState({
                         array: arr,
                         colors: colors
@@ -453,7 +457,7 @@ class Sorter extends Component {
                 const [barOneIdx, barTwoIdx] = animations[i];
                 const color = i % 3 === 0 ? "red" : "orange";
                 // let algoColor = i % 3 === 0 ? ["white","white","white","yellow","yellow","white"] : ["white","white","white","white","white","yellow"];
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
                 colors[barOneIdx] = color;
                 colors[barTwoIdx] = color;
                 this.setState({
@@ -461,7 +465,7 @@ class Sorter extends Component {
                     // AlgocolorSelect: algoColor
                 })
             } else {
-                await new Promise(resolve => setTimeout(resolve, speed));
+                await sleep(speed)
                 let arr = [...this.state.array]
                 const [barOneIdx, newHeight] = animations[i];
                 colors[barOneIdx] = 'orange'
@@ -502,7 +506,7 @@ class Sorter extends Component {
                 this.setState({
                     colors: colors
                 })
-                await new Promise(resolve => setTimeout(resolve, speed2));
+                await sleep(speed2)
                 if (arr[i] > arr[i + 1]) {
                     if (speed2 !== 0) {
                         colors[i] = "pink"
@@ -510,7 +514,7 @@ class Sorter extends Component {
                         this.setState({
                             colors: colors
                         })
-                        await new Promise(resolve => setTimeout(resolve, speed2));
+                        await sleep(speed2)
                     }
                     let temp = arr[i]
                     arr[i] = arr[i + 1]
@@ -524,7 +528,7 @@ class Sorter extends Component {
                     colors: colors
                 })
                 if (speed2 !== 0) {
-                    await new Promise(resolve => setTimeout(resolve, speed2));
+                    await sleep(speed2)
                 }
             }
             colors[end] = "green"
@@ -543,7 +547,7 @@ class Sorter extends Component {
                 this.setState({
                     colors: colors
                 })
-                await new Promise(resolve => setTimeout(resolve, speed2));
+                await sleep(speed2)
                 if (arr[i] > arr[i + 1]) {
                     if (speed2 !== 0) {
                         colors[i] = "pink"
@@ -551,7 +555,7 @@ class Sorter extends Component {
                         this.setState({
                             colors: colors
                         })
-                        await new Promise(resolve => setTimeout(resolve, speed2));
+                        await sleep(speed2)
                     }
                     let temp = arr[i]
                     arr[i] = arr[i + 1]
@@ -564,8 +568,8 @@ class Sorter extends Component {
                 this.setState({
                     colors: colors
                 })
-                if (speed2 != 0) {
-                    await new Promise(resolve => setTimeout(resolve, speed2));
+                if (speed2 !== 0) {
+                    await sleep(speed2)
                 }
             }
             colors[start] = "green"
@@ -595,8 +599,6 @@ class Sorter extends Component {
         // First populate the count object
         for (let i = min; i <= max; i++) {
             count[i] = 0;
-            // colors[i] = "blueviolet"
-            // await new Promise(resolve => setTimeout(resolve, 10));
         }
         for (let k = 0;k<arr.length; k++) {
             speed3 = this.state.speed
@@ -604,15 +606,15 @@ class Sorter extends Component {
             this.setState({
                 colors: colors
             })
-            await new Promise(resolve => setTimeout(resolve, speed3));
+            await sleep(speed3)
             colors[k-1] = "blueviolet"
-            if(k==arr.length-1) {
+            if(k===arr.length-1) {
                 colors[k] = "blueviolet"
             }
             this.setState({
                 colors: colors
             })
-            await new Promise(resolve => setTimeout(resolve, speed3));
+            await sleep(speed3)
         }
         for (let i = 0; i < arr.length; i++) {
             speed3 = this.state.speed
@@ -620,20 +622,15 @@ class Sorter extends Component {
             this.setState({
                 colors: colors
             })
-            await new Promise(resolve => setTimeout(resolve, speed3));
+            await sleep(speed3)
             count[arr[i]] += 1;
         }
         const sortedArr = [];
-        await new Promise(resolve => setTimeout(resolve, speed3+100));
+        await sleep(speed3+100)
         for (let i = min; i <= max; i++) {
             while (count[i] > 0) {
                 sortedArr.push(i);
-                // colors.push("green")
                 count[i]--;
-                // this.setState({
-                //     array: sortedArr,
-                //     // colors: colors
-                // })
             }
         }
         for(let k=0;k<sortedArr.length;k++)
@@ -641,7 +638,7 @@ class Sorter extends Component {
             speed3 = this.state.speed
             colors[k]="green"
             arr[k] = sortedArr[k]
-            await new Promise(resolve => setTimeout(resolve, speed3));
+            await sleep(speed3)
             this.setState({
                 array: arr,
                 colors:colors
@@ -727,7 +724,7 @@ class Sorter extends Component {
                 if(speed!==0) {
                     await sleep(speed)
                 }
-                await this.swap(arr, i, pivotIndex)
+                await this.swapQuick(arr, i, pivotIndex)
                 if(speed!==0) {
                     await sleep(speed)
                 }
@@ -752,7 +749,7 @@ class Sorter extends Component {
             AlgocolorQuick: AlgocolorQuick
         })
         await sleep(speed)
-        await this.swap(arr, pivotIndex, end)
+        await this.swapQuick(arr, pivotIndex, end)
         this.setState({
             array: arr
         })
@@ -765,10 +762,96 @@ class Sorter extends Component {
         return pivotIndex
     }
 
-    swap = async (arr, a, b) => {
+    swapQuick = async (arr, a, b) => {
         let temp = arr[a]
         arr[a] = arr[b]
         arr[b] = temp
+    }
+
+
+    oddevenSorter = async () => {
+        this.setState({
+            algorithm: 8,
+            disableInput: true,
+        })
+        let arr = [...this.state.array]
+        let n = arr.length
+        let colors = Array(arr.length).fill("blueviolet")
+        let sorted =false
+        let speed4 = this.state.speed
+        while(!sorted)
+        {
+            sorted = true
+            
+            for(let i=1; i<=n-2; i+=2)
+            {
+                speed4 = this.state.speed
+                colors[i] = "red"
+                colors[i+1] = "red"
+                this.setState({
+                    colors: colors
+                })
+                if(speed4!==0) {
+                    await sleep(speed4*1.8)
+                } else {
+                    await sleep(1)
+                }
+                if(arr[i] > arr[i+1])
+                {
+                    colors[i] = "pink"
+                    colors[i+1] = "pink"
+                    swap(arr, i, i+1)
+                    this.setState({
+                        array: arr,
+                        colors: colors
+                    })
+                    if(speed4!==0) {
+                        await sleep(speed4*1.8)
+                    }
+                    sorted = false
+                }
+                colors[i]="blueviolet"
+                colors[i+1]="blueviolet"
+            }
+
+            for(let i=0; i<=n-2; i+=2)
+            {
+                colors[i] = "orange"
+                colors[i+1] = "orange"
+                this.setState({
+                    colors: colors
+                })
+                if(speed4!==0) {
+                    await sleep(speed4*1.8)
+                } else {
+                    await sleep(1)
+                }
+                if(arr[i] > arr[i+1])
+                {
+                    colors[i] = "pink"
+                    colors[i+1] = "pink"
+                    swap(arr, i, i+1)
+                    sorted = false
+                    this.setState({
+                        array: arr,
+                        colors: colors
+                    })
+                    if(speed4!==0) {
+                        await sleep(speed4*1.8)
+                    }
+                }
+                colors[i]="blueviolet"
+                colors[i+1]="blueviolet"
+            }
+        }
+        colors = Array(arr.length).fill("green")
+        this.setState({
+            array: arr,
+            colors: colors,
+            disableInput: false,
+            speed: 200,
+            transition: "0.3s"
+        })
     }
     render() {
         return (
@@ -787,6 +870,7 @@ class Sorter extends Component {
                             <ShowAlgorithm value={this.state.algorithm} state={this.state} />
                         </div>
                     </div>
+                    {/* <button onClick={this.oddevenSorter}>OddEven</button> */}
                 </div>
             </div>
         )
