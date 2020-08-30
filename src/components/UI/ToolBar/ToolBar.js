@@ -28,6 +28,8 @@ class ToolBar extends Component {
             return this.props.clicked.cocktailSorter()
         } else if(this.state.value==="6") {
             return this.props.clicked.countSorter()
+        } else if(this.state.value==="7") {
+            return this.props.clicked.quickSortHelper()
         } else {
             alert("Please select Algorithm")
         }
@@ -53,6 +55,7 @@ class ToolBar extends Component {
                         <option className="select-option" value="4">MergeSort</option> 
                         <option className="select-option" value="5">CocktailSort</option> 
                         <option className="select-option" value="6">CountSort</option> 
+                        <option className="select-option" value="7">QuickSort</option> 
                     </select>
                     </div>
                 </div>

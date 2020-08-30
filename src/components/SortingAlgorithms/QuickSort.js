@@ -1,7 +1,7 @@
 import React from 'react'
 
 const QuickSort = (props) => {
-    const margin = [0,1,1,3,5,7,7,3]
+    const margin = [0,2,2,2,4,6,6,2]
     return (
         <div>
             {props.quick.map((value, id) => ( 

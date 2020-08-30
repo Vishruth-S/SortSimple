@@ -26,7 +26,9 @@ class Sorter extends Component {
         SelectionSortAlgo: ["Repeat (n-1) times", "set first unsorted element as min", "for each unsorted element", "if element<min", "set element as new min", "swap min with first unsorted element"],
         AlgocolorSelect: ["white", "white", "white", "white", "white", "white"],
         InsertionSortAlgo: ["Mark first element as sorted", "for each unsorted x", "temp=x", "for j=last_Sorted_Index to 0", "if temp < current element[j]", "move temp to the left by 1"],
-        MergeSortAlgo: ["Split each element into partitions of size 1","recursively merge adjacent partitions","for i=leftPartIndex to rightPartIndex","if(leftValue<=rightValue)","copy leftValue","else: copy rightValue"]
+        MergeSortAlgo: ["Split each element into partitions of size 1","recursively merge adjacent partitions","for i=leftPartIndex to rightPartIndex","if(leftValue<=rightValue)","copy leftValue","else: copy rightValue"],
+        QuickSortAlgo: ["For each unsorted Partition","pivot = last_element_of_partition","partitionIndex=indexOf_first_element","for each element in partition","if(element<pivot)","swap(element, A[partitionIndex])","partitionIndex ++","swap(A[partitionIndex],pivot)"],
+        AlgocolorQuick: ["white","white","White","white","white","white","white","white"]
     }
 
     componentDidMount() {
@@ -167,6 +169,18 @@ class Sorter extends Component {
         } else if (v === "4") {
             this.setState({
                 algorithm: 4
+            })
+        }  else if (v === "5") {
+            this.setState({
+                algorithm: 5
+            })
+        }  else if (v === "6") {
+            this.setState({
+                algorithm: 6
+            })
+        }  else if (v === "7") {
+            this.setState({
+                algorithm: 7
             })
         }
     }
@@ -640,40 +654,122 @@ class Sorter extends Component {
         })
         
     }
+    quickSortHelper = async () => {
+        this.setState({
+            disableInput: true,
+            algorithm: 7
+        })
+        let arr = [...this.state.array]
+        let start = 0, end = arr.length-1
+        await this.quickSort(arr, start, end)
+        let colors = Array(arr.length).fill("green") 
+        this.setState({
+            array: arr,
+            colors: colors,
+            disableInput: false,
+            speed: 200,
+            transition: "0.3s",
+            AlgocolorQuick: ["white","white","white","white","white","white","white","white"]
+        })
 
-    // Partition =  (A, start, end) => {
-    //     let pivot = A[end]
-    //     let pIndex = start
-    //     for(let i=start;i<end;i++) {
-    //         // await new Promise(resolve => setTimeout(resolve, 10));
-    //         if(A[i]<=pivot) {
-    //             let temp = A[i]
-    //             A[i] = A[pIndex]
-    //             A[pIndex] = temp
-    //             pIndex++
-    //         }
-    //     }
-    //     let temp2 = A[pIndex]
-    //     A[pIndex] = A[end]
-    //     A[end] = temp2
-    //     return pIndex
-    // }
-    // quickSortHelper = () => {
-    //     let A = [...this.state.array]
-    //     let start = 0, end = A.length-1
-    //     this.quickSort(A, start, end)
-    //     this.setState({
-    //         array: A
-    //     })
-    // }
-    // quickSort = (A, start, end) => {
-    //     if(start<end) {
-    //         let pIndex = this.Partition(A, start, end)
-    //         this.quickSort(A, start, pIndex-1)
-    //         this.quickSort(A, pIndex+1, end) 
-    //     }
-    // }
+    }
 
+    quickSort = async (arr, start, end) => {
+        let speed = this.state.speed
+        let colors = Array(arr.length).fill("blueviolet") 
+        if(start>=end) {
+            return
+        }
+        let index = await this.partition(arr, start, end)
+        await sleep(speed)
+        await this.quickSort(arr, start, index-1)
+        this.setState({
+            colors: colors
+        })
+        await sleep(speed)
+        await this.quickSort(arr, index+1, end)
+    }
+
+    partition = async (arr, start, end) => {
+        let AlgocolorQuick = ["white","yellow","yellow","white","white","white","white","white"]
+        this.setState({
+            AlgocolorQuick: AlgocolorQuick
+        })
+        let colors = [...this.state.colors]
+        let speed = this.state.speed
+        let pivotIndex = start
+        let pivotValue = arr[end]
+        colors[pivotIndex] = "blue"
+        colors[end] = "red"
+        await sleep(speed)
+        for(let i=start; i<end; i++) {
+            AlgocolorQuick = ["white","white","yellow","yellow","white","white","white","white"]
+            speed = this.state.speed
+            colors[pivotIndex] = "blue"
+            colors[i] = colors[i]!=="blue" ? "orange" : "blue"
+            this.setState({
+                colors: colors,
+                AlgocolorQuick: AlgocolorQuick
+            })
+            AlgocolorQuick = ["white","white","white","white","yellow","white","white","white"]
+            this.setState({
+                AlgocolorQuick: AlgocolorQuick
+            })
+            await sleep(speed)
+            if(arr[i]<pivotValue) {
+                colors[i]="pink"
+                colors[pivotIndex]="pink"
+                AlgocolorQuick = ["white","white","white","white","white","yellow","yellow","white"]
+                this.setState({
+                    colors: colors,
+                    AlgocolorQuick: AlgocolorQuick
+                })
+                if(speed!==0) {
+                    await sleep(speed)
+                }
+                await this.swap(arr, i, pivotIndex)
+                if(speed!==0) {
+                    await sleep(speed)
+                }
+                pivotIndex++
+                this.setState({
+                    array: arr
+                })
+            }       
+            await sleep(speed)
+            colors[i]="blueviolet"
+            colors[pivotIndex-1] = "blueviolet"
+            this.setState({
+                colors: colors
+            })     
+        }
+        await sleep(speed)
+        colors[pivotIndex] = "cyan"
+        colors[end] = "cyan"
+        AlgocolorQuick = ["white","white","white","white","white","white","white","yellow"]
+        this.setState({
+            colors: colors,
+            AlgocolorQuick: AlgocolorQuick
+        })
+        await sleep(speed)
+        await this.swap(arr, pivotIndex, end)
+        this.setState({
+            array: arr
+        })
+        await sleep(speed)
+        colors[pivotIndex] = "blueviolet"
+        colors[end] = "blueviolet"
+        this.setState({
+            colors: colors
+        })
+        return pivotIndex
+    }
+
+    swap = async (arr, a, b) => {
+        let temp = arr[a]
+        arr[a] = arr[b]
+        arr[b] = temp
+    }
     render() {
         return (
             <div>
@@ -691,7 +787,6 @@ class Sorter extends Component {
                             <ShowAlgorithm value={this.state.algorithm} state={this.state} />
                         </div>
                     </div>
-                    {/* <button onClick = {this.quickSortHelper}>QuickSort</button> */}
                 </div>
             </div>
         )
@@ -768,6 +863,10 @@ function swap(arr, first_Index, second_Index) {
     var temp = arr[first_Index];
     arr[first_Index] = arr[second_Index];
     arr[second_Index] = temp;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 export default Sorter

@@ -4,6 +4,7 @@ import BubbleSort from '../SortingAlgorithms/BubbleSort'
 import SelectionSort from '../SortingAlgorithms/SelectionSort'
 import InsertionSort from '../SortingAlgorithms/InsertionSort'
 import MergeSort from '../SortingAlgorithms/MergeSort'
+import QuickSort from '../SortingAlgorithms/QuickSort'
 
 import './ShowAlgorithm.css'
 
@@ -17,6 +18,8 @@ const ShowAlgorithm = (props) => {
         algo = <InsertionSort colorArr = {props.state.AlgocolorSelect} insertion={props.state.InsertionSortAlgo} speed={props.state.speed}/>
     } else if(props.value===4) {
         algo = <MergeSort colorArr = {props.state.AlgocolorSelect} merge={props.state.MergeSortAlgo} speed={props.state.speed} />
+    } else if(props.value===7) {
+        algo = <QuickSort colorArr = {props.state.AlgocolorQuick} quick={props.state.QuickSortAlgo} speed={props.state.speed} />
     }
     return (
         <div>
