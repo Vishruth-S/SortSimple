@@ -22,13 +22,15 @@ class Sorter extends Component {
         transition: "0.3s",
         algorithm: 0,
         BubblesortAlgo: ["for i=0 to last_Element", "for j=0 to Last_Unsorted_Element", "if left_Element>right_Element", "swap(left_Element,right_Element)"],
-        Algocolor: ["white", "white", "white", "white"],
+        Algocolor: Array(4).fill("white"),
         SelectionSortAlgo: ["Repeat (n-1) times", "set first unsorted element as min", "for each unsorted element", "if element<min", "set element as new min", "swap min with first unsorted element"],
-        AlgocolorSelect: ["white", "white", "white", "white", "white", "white"],
+        AlgocolorSelect:  Array(6).fill("white"),
         InsertionSortAlgo: ["Mark first element as sorted", "for each unsorted x", "temp=x", "for j=last_Sorted_Index to 0", "if temp < current element[j]", "move temp to the left by 1"],
         MergeSortAlgo: ["Split each element into partitions of size 1","recursively merge adjacent partitions","for i=leftPartIndex to rightPartIndex","if(leftValue<=rightValue)","copy leftValue","else: copy rightValue"],
         QuickSortAlgo: ["For each unsorted Partition","pivot = last_element_of_partition","partitionIndex=indexOf_first_element","for each element in partition","if(element<pivot)","swap(element, A[partitionIndex])","partitionIndex ++","swap(A[partitionIndex],pivot)"],
-        AlgocolorQuick: ["white","white","White","white","white","white","white","white"]
+        AlgocolorQuick: Array(8).fill("white"),
+        CocktailAlgo: ["start=0, end=n-1, swapped=true","while (swapped)","for i=start to end","if(left_element>right_element)","swap (left, right); swapped=true","end --; swapped=false","for i=end-1 to start","if(left_element>right_element)","swap (left, right); swapped=true","start ++"],
+        AlgocolorCocktail: Array(10).fill("white")
     }
 
     componentDidMount() {
@@ -377,11 +379,15 @@ class Sorter extends Component {
                 colors: colors,
                 AlgocolorSelect: ["white", "white", "yellow", "white", "white", "white"]
             })
-            await sleep(speed*0.6)
+            if(speed!==0) {
+                await sleep(speed*0.6)
+            }
             this.setState({
                 AlgocolorSelect: ["white", "white", "white", "yellow", "white", "white"]
             })
-            await sleep(speed*0.6)
+            if(speed!==0) {
+                await sleep(speed*0.6)
+            }
             for (let j = i - 1; j >= 0; j--) {
                 speed = this.state.speed
                 let flag = 0
@@ -398,7 +404,9 @@ class Sorter extends Component {
                         colors: colors,
                         AlgocolorSelect: ["white", "white", "white", "white", "white", "yellow"]
                     })
-                    await sleep(speed)
+                    if(sleep!==0) {
+                        await sleep(speed)
+                    }
                     this.setState({
                         array: arr,
                         colors: colors
@@ -491,28 +499,42 @@ class Sorter extends Component {
         this.setState({
             algorithm: 5,
             disableInput: true,
+            AlgocolorCocktail: ["yellow","yellow","white","white","white","white","white","white","white","white"]
         })
         let arr = [...this.state.array]
-        let swapped = true
         let n = arr.length
-        let start = 0, end = n - 1
+        let start = 0, end = n - 1, swapped=true
         let colors = Array(arr.length).fill('blueviolet')
-        for (let k = 0; k < n; k++) {
+        // for (let k = 0; k < n-1; k++) {
+        while(swapped) {
+            swapped = false
             let speed2 = this.state.speed
+            let AlgocolorCocktail = ["white","white","yellow","white","white","white","white","white","white","white"]
+            this.setState({
+                AlgocolorCocktail: AlgocolorCocktail
+            })
+            if(speed2 !== 0) {
+                await sleep(speed2)
+            }
             for (let i = start; i < end; ++i) {
                 speed2 = this.state.speed
                 colors[i] = "red"
                 colors[i + 1] = "red"
+                AlgocolorCocktail = ["white","white","white","yellow","white","white","white","white","white","white"]
                 this.setState({
-                    colors: colors
+                    colors: colors,
+                    AlgocolorCocktail: AlgocolorCocktail
                 })
                 await sleep(speed2)
                 if (arr[i] > arr[i + 1]) {
+                    swapped = true
                     if (speed2 !== 0) {
                         colors[i] = "pink"
                         colors[i + 1] = "pink"
+                        AlgocolorCocktail = ["white","white","white","white","yellow","white","white","white","white","white"]
                         this.setState({
-                            colors: colors
+                            colors: colors,
+                            AlgocolorCocktail: AlgocolorCocktail
                         })
                         await sleep(speed2)
                     }
@@ -531,29 +553,34 @@ class Sorter extends Component {
                     await sleep(speed2)
                 }
             }
+            AlgocolorCocktail = ["white","white","white","white","white","yellow","white","white","white","white"]
             colors[end] = "green"
             this.setState({
-                colors: colors
+                colors: colors,
+                AlgocolorCocktail: AlgocolorCocktail
             })
-
-            if (!swapped)
-                break
+            swapped = false
             --end
 
             for (let i = end - 1; i >= start; --i) {
                 speed2 = this.state.speed
                 colors[i] = "orange"
                 colors[i + 1] = "orange"
+                AlgocolorCocktail = ["white","white","white","white","white","white","white","yellow","white","white"]
                 this.setState({
-                    colors: colors
+                    colors: colors,
+                    AlgocolorCocktail: AlgocolorCocktail
                 })
                 await sleep(speed2)
                 if (arr[i] > arr[i + 1]) {
+                    swapped = true
                     if (speed2 !== 0) {
                         colors[i] = "pink"
                         colors[i + 1] = "pink"
+                        AlgocolorCocktail = ["white","white","white","white","white","white","white","white","yellow","white"]
                         this.setState({
-                            colors: colors
+                            colors: colors,
+                            AlgocolorCocktail: AlgocolorCocktail
                         })
                         await sleep(speed2)
                     }
@@ -572,17 +599,21 @@ class Sorter extends Component {
                     await sleep(speed2)
                 }
             }
+            AlgocolorCocktail = ["white","white","white","white","white","white","white","white","white","yellow"]
             colors[start] = "green"
             this.setState({
-                colors: colors
+                colors: colors,
+                AlgocolorCocktail: AlgocolorCocktail
             })
             ++start;
         }
         this.setState({
             array: arr,
+            colors: Array(arr.length).fill("green"),
             disableInput: false,
             speed: 200,
-            transition: "0.3s"
+            transition: "0.3s",
+            AlgocolorCocktail: Array(10).fill("white")
         })
     }
 
@@ -673,18 +704,24 @@ class Sorter extends Component {
 
     quickSort = async (arr, start, end) => {
         let speed = this.state.speed
-        let colors = Array(arr.length).fill("blueviolet") 
+        let colors =  Array(arr.length).fill("blueviolet")
+        // let colors = [...this.state.colors]
         if(start>=end) {
             return
         }
-        let index = await this.partition(arr, start, end)
-        await sleep(speed)
-        await this.quickSort(arr, start, index-1)
+        for(let j = start;j<=end;j++) {
+            colors[j] = "purple"
+        }
         this.setState({
             colors: colors
         })
         await sleep(speed)
+        let index = await this.partition(arr, start, end)
+        await sleep(speed)
+        await this.quickSort(arr, start, index-1)
+        await sleep(speed)
         await this.quickSort(arr, index+1, end)
+        // colors = Array(arr.length).fill("blueviolet")
     }
 
     partition = async (arr, start, end) => {
@@ -692,7 +729,7 @@ class Sorter extends Component {
         this.setState({
             AlgocolorQuick: AlgocolorQuick
         })
-        let colors = [...this.state.colors]
+        let colors =  [...this.state.colors]
         let speed = this.state.speed
         let pivotIndex = start
         let pivotValue = arr[end]
@@ -734,8 +771,8 @@ class Sorter extends Component {
                 })
             }       
             await sleep(speed)
-            colors[i]="blueviolet"
-            colors[pivotIndex-1] = "blueviolet"
+            colors[i]="purple"
+            colors[pivotIndex-1] = "purple"
             this.setState({
                 colors: colors
             })     
@@ -754,8 +791,8 @@ class Sorter extends Component {
             array: arr
         })
         await sleep(speed)
-        colors[pivotIndex] = "blueviolet"
-        colors[end] = "blueviolet"
+        colors[pivotIndex] = "purple"
+        colors[end] = "purple"
         this.setState({
             colors: colors
         })

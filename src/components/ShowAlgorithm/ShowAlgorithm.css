@@ -10,6 +10,12 @@
     font-size: 13px;
 }
 
+@media (max-width: 1300px) {
+    .algo-text {
+        font-size: 10px
+    }
+}
+
 @media (max-width: 600px) {
     .head {
         margin-bottom: 15px;
