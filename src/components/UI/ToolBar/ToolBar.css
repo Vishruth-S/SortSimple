@@ -4,7 +4,7 @@
 .tool-button {
     outline: none;
     border: none;
-    background: #82ffd7;
+    background: #29ffba;
     height: 40px;
     width: 100px;
     border-radius: 8px;
@@ -130,7 +130,7 @@ input[type="range"] {
     width: 2em;
     height: 2em;
     margin-top: 0;
-    background-color: #82ffd7;
+    background-color: #29ffba;
     border-radius: 1em;
     border: 2px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -146,7 +146,7 @@ input[type="range"] {
     width: 2em;
     height: 2em;
     margin-top: 0;
-    background-color: #82ffd7;
+    background-color: #29ffba;
     border-radius: 1em;
     border: 2px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -155,7 +155,7 @@ input[type="range"] {
     width: 2em;
     height: 2em;
     margin-top: 0;
-    background-color: #82ffd7;
+    background-color: #29ffba;
     border-radius: 1em;
     border: 2px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;

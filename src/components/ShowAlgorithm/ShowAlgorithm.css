@@ -10,11 +10,25 @@
     font-size: 13px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
+    .algo-text {
+        font-size: 11px
+    }
+}
+
+
+@media (max-width: 1350px) {
     .algo-text {
         font-size: 10px
     }
 }
+
+@media (max-width: 1200px) {
+    .algo-text {
+        font-size: 8px
+    }
+}
+
 
 @media (max-width: 600px) {
     .head {

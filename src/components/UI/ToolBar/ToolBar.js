@@ -43,11 +43,11 @@ class ToolBar extends Component {
                     <button className="tool-button" disabled = {this.props.state.disableInput} onClick={this.props.clicked.arrayReset}>New array</button>
                 </div>
                 <div className="tool-element tool-array-size">
-                    <div>Change Array Size</div>
+                    <div style={{color: this.props.state.disableInput ? "gray" : "white"}}>Change Array Size</div>
                     <input type="range" min="10" max="100" defaultValue="25" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
                 </div>
                 <div className="tool-element tool-sort">
-                    <div>Choose Sorting Algorithm</div>
+                    <div style={{color: this.props.state.disableInput ? "gray" : "white"}}>Choose Sorting Algorithm</div>
                     <div >
                     <select defaultValue="0" className="selector" disabled = {this.props.state.disableInput} onChange={this.optionChangeHandler}>
                         <option className="select-option-disabled" value="0" disabled>Select Algorithm</option>
@@ -66,7 +66,7 @@ class ToolBar extends Component {
                     <button className="tool-button" disabled={this.props.state.disableInput} onClick={this.sortMethodHandler}>Sort</button>
                 </div>
                 <div className="tool-element tool-speed">
-                    <div>Change Speed</div>
+                    <div style={{color: "white"}}>Change Speed</div>
                     <input type="range" min="10" max="401" value={401-this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
                 </div>
             </div>

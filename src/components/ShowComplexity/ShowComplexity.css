@@ -1,0 +1,30 @@
+.complexity {
+    position: absolute;
+    width: 90%;
+    top: 400px;
+}
+
+.complexity-head {
+    text-align: center;
+}
+
+.table1, .table1 th, .table1 td {
+    border: 1px solid black;
+    min-width: 105px;
+    text-align: center;
+  }
+
+.space-column {
+    min-width: 120px;
+}
+
+@media (max-width: 1400px) {
+    .table1, .table1 th, .table1 td {
+        min-width: 95px;
+    }
+
+    .space-column {
+        min-width: 102px;
+    }
+    
+}

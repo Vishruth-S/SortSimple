@@ -8,6 +8,7 @@ import Navbar from '../UI/Navbar/Navbar'
 import ArrayDisplay from '../../containers/ArrayDisplay/ArrayDisplay'
 import ToolBar from '../UI/ToolBar/ToolBar'
 import ShowAlgorithm from '../ShowAlgorithm/ShowAlgorithm'
+import ShowComplexity from '../ShowComplexity/ShowComplexity'
 
 class Sorter extends Component {
 
@@ -817,7 +818,7 @@ class Sorter extends Component {
             }       
             await sleep(speed)
             colors[i]="purple"
-            colors[pivotIndex-1] = "purple"
+            colors[pivotIndex-1] = pivotIndex===start ? "blueviolet" : "purple"
             this.setState({
                 colors: colors
             })     
@@ -975,6 +976,7 @@ class Sorter extends Component {
                         </div>
                         <div className="col-lg-3 col-12">
                             <ShowAlgorithm value={this.state.algorithm} state={this.state} />
+                            <ShowComplexity algorithm={this.state.algorithm}/>
                         </div>
                     </div>
                     {/* <button onClick={this.oddevenSorter}>OddEven</button> */}
