@@ -44,7 +44,7 @@ class ToolBar extends Component {
                 </div>
                 <div className="tool-element tool-array-size">
                     <div>Change Array Size</div>
-                    <input type="range" min="9" max="99" defaultValue="24" step="3" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
+                    <input type="range" min="10" max="100" defaultValue="25" disabled = {this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
                 </div>
                 <div className="tool-element tool-sort">
                     <div>Choose Sorting Algorithm</div>
