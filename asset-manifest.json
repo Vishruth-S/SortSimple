@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SortSimple/static/css/main.89174240.chunk.css",
+    "main.css": "/SortSimple/static/css/main.e4ce04a8.chunk.css",
     "main.js": "/SortSimple/static/js/main.5d074f51.chunk.js",
     "main.js.map": "/SortSimple/static/js/main.5d074f51.chunk.js.map",
     "runtime-main.js": "/SortSimple/static/js/runtime-main.dd2d0be9.js",
@@ -9,10 +9,10 @@
     "static/js/2.137e5ff7.chunk.js": "/SortSimple/static/js/2.137e5ff7.chunk.js",
     "static/js/2.137e5ff7.chunk.js.map": "/SortSimple/static/js/2.137e5ff7.chunk.js.map",
     "index.html": "/SortSimple/index.html",
-    "precache-manifest.1e7128a45dcceba15331ff2ce91c8477.js": "/SortSimple/precache-manifest.1e7128a45dcceba15331ff2ce91c8477.js",
+    "precache-manifest.95f4487bd22fc280c8ead7a527d3997e.js": "/SortSimple/precache-manifest.95f4487bd22fc280c8ead7a527d3997e.js",
     "service-worker.js": "/SortSimple/service-worker.js",
     "static/css/2.6a557ea9.chunk.css.map": "/SortSimple/static/css/2.6a557ea9.chunk.css.map",
-    "static/css/main.89174240.chunk.css.map": "/SortSimple/static/css/main.89174240.chunk.css.map",
+    "static/css/main.e4ce04a8.chunk.css.map": "/SortSimple/static/css/main.e4ce04a8.chunk.css.map",
     "static/js/2.137e5ff7.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.137e5ff7.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/SortSimple/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/logo.png": "/SortSimple/static/media/logo.ee6d1719.png",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.dd2d0be9.js",
     "static/css/2.6a557ea9.chunk.css",
     "static/js/2.137e5ff7.chunk.js",
-    "static/css/main.89174240.chunk.css",
+    "static/css/main.e4ce04a8.chunk.css",
     "static/js/main.5d074f51.chunk.js"
   ]
 }
