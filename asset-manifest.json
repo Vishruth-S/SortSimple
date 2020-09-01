@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/SortSimple/static/css/main.f62b58aa.chunk.css",
-    "main.js": "/SortSimple/static/js/main.a921b627.chunk.js",
-    "main.js.map": "/SortSimple/static/js/main.a921b627.chunk.js.map",
+    "main.css": "/SortSimple/static/css/main.89174240.chunk.css",
+    "main.js": "/SortSimple/static/js/main.112d3a90.chunk.js",
+    "main.js.map": "/SortSimple/static/js/main.112d3a90.chunk.js.map",
     "runtime-main.js": "/SortSimple/static/js/runtime-main.dd2d0be9.js",
     "runtime-main.js.map": "/SortSimple/static/js/runtime-main.dd2d0be9.js.map",
-    "static/css/2.11829350.chunk.css": "/SortSimple/static/css/2.11829350.chunk.css",
-    "static/js/2.ed0222ca.chunk.js": "/SortSimple/static/js/2.ed0222ca.chunk.js",
-    "static/js/2.ed0222ca.chunk.js.map": "/SortSimple/static/js/2.ed0222ca.chunk.js.map",
+    "static/css/2.6a557ea9.chunk.css": "/SortSimple/static/css/2.6a557ea9.chunk.css",
+    "static/js/2.137e5ff7.chunk.js": "/SortSimple/static/js/2.137e5ff7.chunk.js",
+    "static/js/2.137e5ff7.chunk.js.map": "/SortSimple/static/js/2.137e5ff7.chunk.js.map",
     "index.html": "/SortSimple/index.html",
-    "precache-manifest.77f71f9ec586951ea0d5cb86470057c3.js": "/SortSimple/precache-manifest.77f71f9ec586951ea0d5cb86470057c3.js",
+    "precache-manifest.1796b3327f65c1ba73797717cb2e9f1b.js": "/SortSimple/precache-manifest.1796b3327f65c1ba73797717cb2e9f1b.js",
     "service-worker.js": "/SortSimple/service-worker.js",
-    "static/css/2.11829350.chunk.css.map": "/SortSimple/static/css/2.11829350.chunk.css.map",
-    "static/css/main.f62b58aa.chunk.css.map": "/SortSimple/static/css/main.f62b58aa.chunk.css.map",
-    "static/js/2.ed0222ca.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.ed0222ca.chunk.js.LICENSE.txt",
+    "static/css/2.6a557ea9.chunk.css.map": "/SortSimple/static/css/2.6a557ea9.chunk.css.map",
+    "static/css/main.89174240.chunk.css.map": "/SortSimple/static/css/main.89174240.chunk.css.map",
+    "static/js/2.137e5ff7.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.137e5ff7.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/SortSimple/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/logo.png": "/SortSimple/static/media/logo.ee6d1719.png",
     "static/media/robot.jpg": "/SortSimple/static/media/robot.58015650.jpg",
     "static/media/robot5.jpg": "/SortSimple/static/media/robot5.9d9fbfce.jpg",
-    "static/media/sorter1.png": "/SortSimple/static/media/sorter1.3c442d83.png"
+    "static/media/sorter1.png": "/SortSimple/static/media/sorter1.3c8641d5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.dd2d0be9.js",
-    "static/css/2.11829350.chunk.css",
-    "static/js/2.ed0222ca.chunk.js",
-    "static/css/main.f62b58aa.chunk.css",
-    "static/js/main.a921b627.chunk.js"
+    "static/css/2.6a557ea9.chunk.css",
+    "static/js/2.137e5ff7.chunk.js",
+    "static/css/main.89174240.chunk.css",
+    "static/js/main.112d3a90.chunk.js"
   ]
 }
