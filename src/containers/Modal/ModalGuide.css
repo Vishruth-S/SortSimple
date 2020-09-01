@@ -55,3 +55,21 @@
 button:focus {
     outline: none;
 }
+
+@media (max-width: 600px) {
+    .previous {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .previous {
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 330px) {
+    .previous {
+        margin-left: 60px;
+    }
+}
