@@ -15,7 +15,7 @@ class Sorter extends Component {
     state = {
         array: [],
         colors: [],
-        arrayLen: 24,
+        arrayLen: 25,
         speed: 200,
         width: "25px",
         showValue: true,
@@ -70,7 +70,8 @@ class Sorter extends Component {
 
     arraySizeHandler = (event) => {
         const new_array = []
-        const arrlength = event.target.value
+        const arrLen = Number(event.target.value)
+        const arrlength = arrLen
         let barwidth = this.barWidthCalculater(arrlength)
         this.setState({
             width: barwidth
@@ -79,7 +80,7 @@ class Sorter extends Component {
             new_array.push(randomNumber(30, 500))
         }
         let final_array = this.arrayHeightHandler(new_array)
-        this.setState({ arrayLen: event.target.value })
+        this.setState({ arrayLen: arrLen })
         this.setState({ array: final_array, colors: Array(final_array.length).fill('blueviolet') })
     }
 
