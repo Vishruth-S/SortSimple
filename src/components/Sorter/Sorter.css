@@ -25,6 +25,7 @@
     }
     .main {
         margin: 0px 0px;
+        overflow: auto;
     }
     .array-display {
         padding: 0px !important;

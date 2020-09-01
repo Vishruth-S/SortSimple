@@ -45,7 +45,7 @@ const ShowComplexity = (props) => {
     return (
         <div className="complexity" style={{display: props.algorithm ? "block" : "none"}}>
             <div className="complexity-head">
-                <h4>COMPLEXITY</h4>
+                <h4 className="complexity-heading">COMPLEXITY</h4>
             </div>
             <div className="time-complexity">
                 <span>Time </span>

@@ -28,3 +28,13 @@
     }
     
 }
+
+@media (max-width: 700px) {
+    .complexity {
+        margin-left: 20px;
+        position: unset;;
+    }
+    .complexity-heading {
+        font-size: 18px !important ;
+    }
+}

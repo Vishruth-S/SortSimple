@@ -21,7 +21,7 @@
 }
 
 .tool-array {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .tool-sort{
@@ -30,6 +30,7 @@
 
 .tool-speed {
     margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 .tool-button:focus {
@@ -41,6 +42,20 @@
 }
 .selector:focus {
     outline: none;
+}
+
+.tool-tip-desktop {
+  color: #ffffffa6;
+  font-size: 13px;
+}
+
+.tool-tip-mobile {
+  display: none;
+}
+
+.fa {
+  margin-right: 5px;
+  font-size: 15px;
 }
 
 @media (max-width: 600px) {
@@ -66,6 +81,14 @@
   .tool-array-size {
     margin-left: 200px;
   }
+  .tool-tip-desktop {
+    display: none;
+  }
+  .tool-tip-mobile {
+    display: block;
+    color: #ffffffa6;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -89,8 +112,6 @@
 
 
 /* select */
-
-
 
 /* RANGE */
 input[type="range"] {

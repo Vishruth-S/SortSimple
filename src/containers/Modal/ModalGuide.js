@@ -77,16 +77,21 @@ class ModalGuide extends Component {
                     <Modal.Body>
                         <div className=".robot-img-div"><img className="sorter-img" src={sorter1} alt="img" /></div>
                         <p>You can select any of the listed algorithms from the "select algorithm" drop-down menu.</p>
-                        <p>This will also display the selected algorithm alongside.</p>
+                        <p>This will also display the selected algorithm and related information alongside.</p>
                     </Modal.Body>
                 </div>
                 <div style={{display: this.state.pagedisplay[4]}}>
                     <Modal.Header><h5>Meet the algorithms!</h5></Modal.Header>
                     <Modal.Body>
                         <p>Not all algorithms are created equal. Here are the all algorithms listed with a brief description:</p>
-                        <p>BubbleSort</p>
-                        <p>SelectionSort</p>
-                        <p>InsertionSort</p>
+                        <p className="info-text"><b>SelectionSort:</b>  selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.</p>
+                        <p className="info-text"><b>BubbleSort:</b> compares the adjacent elements and swaps their positions if they are not in the intended order. </p>
+                        <p className="info-text"><b>InsertionSort:</b> array is  split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.</p>
+                        <p className="info-text"><b>QuickSort:</b> based on divide and conquer approach in which the array is split into subarrays and these sub-arrays are recursively called to sort the elements.</p>
+                        <p className="info-text"><b>MergeSort:</b> based on divide and conquer approach, first divides the array into equal halves and then combines them in a sorted manner. </p>
+                        <p className="info-text"><b>CocktailSort:</b>  variation of Bubble sort. Traverses through a given array in both directions alternatively.</p>
+                        <p className="info-text"><b>OddevenSort:</b>  Sorting technique is subdivided into 2 phases odd phase and even phase, both these phases simultaneously at every iteration until all the elements get sorted.</p>
+                        <p className="info-text"><b>CountingSort:</b> sorts the elements of an array by counting the number of occurrences of each unique element in the array. The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary array.</p>
                     </Modal.Body>
                 </div>
                 <div style={{display: this.state.pagedisplay[5]}}>
@@ -102,7 +107,7 @@ class ModalGuide extends Component {
                     <Modal.Body>
                         <div className="robot-img-div"><img className="robot-img" src={robotimg4} alt="img" /></div>
                         <p>I hope you have just as much fun using this visualising tool as I had building it.</p>
-                        <p>You can check out the source code for this project in my Github</p>
+                        <p>You can check out the source code for this project in my <a href="https://github.com/Vishruth-S" target="_blank">Github</a></p>
                     </Modal.Body>
                 </div>
                 <div className="my-footer">

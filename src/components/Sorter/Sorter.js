@@ -34,7 +34,7 @@ class Sorter extends Component {
         AlgocolorCocktail: Array(10).fill("white"),
         OddevenSortAlgo: ["sorted = false","while(!sorted)","sorted=true","for i=1; i<=n-2; i=i+2","if(arr[i] > arr[i+1])","swap(arr[i], arr[i+1]); sorted=false","for i=0; i<=n-2; i=i+2","if(arr[i] > arr[i+1])","swap(arr[i], arr[i+1]); sorted=false"],
         AlgocolorOddeven: Array(9).fill("white"),
-        CountSortAlgo: ["max = largest_element_in_array","initialize count array with all zeros"," for j = 0 to last_element_index","find count of each unique element","store the count at jth index in count array","for j = 0 to max","find the cumulative sum and store it in count array itself","for j = last_element_index down to 1","restore the elements to array","reduce count of elements restored by 1"],
+        CountSortAlgo: ["max = largest_element_in_array","initialize count array with all zeros"," for j = 0 to last_element_index","find count of each unique element","store it at jth index in count array","for j = 0 to max","find cumulative sum;store in count array","for j = last_element_index down to 1","restore the elements to array","reduce count of elements restored by 1"],
         AlgocolorCount: Array(10).fill("white"),
     }
 
@@ -298,7 +298,7 @@ class Sorter extends Component {
             for (j = i + 1; j < len; j++) {
                 speed = this.state.speed
                 if (speed !== 0) {
-                    await new Promise(resolve => setTimeout(resolve, speed * 0.3));
+                    await sleep(speed*0.3)
                 }
                 colors[j] = "orange"
                 this.setState({
@@ -965,7 +965,7 @@ class Sorter extends Component {
         return (
             <div>
                 <Navbar />
-                {/* <ModalGuide /> */}
+                <ModalGuide />
                 <div className="main">
                     <div className="row">
                         <div className="col-lg-2 col-12 toolbar">
@@ -979,7 +979,6 @@ class Sorter extends Component {
                             <ShowComplexity algorithm={this.state.algorithm}/>
                         </div>
                     </div>
-                    {/* <button onClick={this.oddevenSorter}>OddEven</button> */}
                 </div>
             </div>
         )

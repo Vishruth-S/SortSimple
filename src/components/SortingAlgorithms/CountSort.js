@@ -2,7 +2,7 @@ import React from 'react'
 
 const CountSort = (props) => {
     const margin = [0,0,0,2,2,0,2,0,2,2]
-    const height = [30, 30, 30, 20, 45, 30, 45, 30, 20, 20]
+    const height = [30, 30, 30, 20, 30, 30, 30, 30, 20, 20]
     return (
         <div>
             {props.count.map((value, id) => ( 

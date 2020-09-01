@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react'
-
 import './ToolBar.css'
+
+import 'font-awesome/css/font-awesome.min.css';
 
 class ToolBar extends Component {
     state = {
@@ -39,6 +40,9 @@ class ToolBar extends Component {
     render() {
         return (
             <div className="tool-container">
+                <div className="tool-tip-mobile">
+                    <p><i className="fa fa-info-circle"></i>Pro tip: Take a large array and visualise various algorithms at max speed for a fun visual :)</p>
+                </div>
                 <div className="tool-element tool-array">
                     <button className="tool-button" disabled = {this.props.state.disableInput} onClick={this.props.clicked.arrayReset}>New array</button>
                 </div>
@@ -51,14 +55,14 @@ class ToolBar extends Component {
                     <div >
                     <select defaultValue="0" className="selector" disabled = {this.props.state.disableInput} onChange={this.optionChangeHandler}>
                         <option className="select-option-disabled" value="0" disabled>Select Algorithm</option>
-                        <option className="select-option" value="1">BubbleSort</option>
-                        <option className="select-option" value="2">SelectionSort</option> 
-                        <option className="select-option" value="3">InsertionSort</option> 
-                        <option className="select-option" value="4">MergeSort</option> 
-                        <option className="select-option" value="5">CocktailSort</option> 
-                        <option className="select-option" value="6">CountingSort</option> 
-                        <option className="select-option" value="7">QuickSort</option> 
-                        <option className="select-option" value="8">OddEvenSort</option> 
+                        <option className="select-option" value="2">Selection sort</option> 
+                        <option className="select-option" value="1">Bubble sort</option>
+                        <option className="select-option" value="3">Insertion sort</option> 
+                        <option className="select-option" value="7">Quick sort</option> 
+                        <option className="select-option" value="4">Merge sort</option> 
+                        <option className="select-option" value="5">Cocktail sort</option> 
+                        <option className="select-option" value="8">OddEven sort</option> 
+                        <option className="select-option" value="6">Counting sort</option> 
                     </select>
                     </div>
                 </div>
@@ -68,6 +72,9 @@ class ToolBar extends Component {
                 <div className="tool-element tool-speed">
                     <div style={{color: "white"}}>Change Speed</div>
                     <input type="range" min="10" max="401" value={401-this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
+                </div>
+                <div className="tool-tip-desktop">
+                    <p><i className="fa fa-info-circle"></i>Pro tip: Take a large array and visualise various algorithms at max speed for a fun visual :)</p>
                 </div>
             </div>
         )

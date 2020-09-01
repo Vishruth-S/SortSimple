@@ -8,11 +8,16 @@
 }
 
 .sorter-img {
-    width: 300px;
+    width: 280px;
 }
 
 .heading1 {
     font-size: 16px !important;
+}
+
+.info-text {
+    font-size: 13px;
+    margin: 5px 0px !important
 }
 
 .my-footer {

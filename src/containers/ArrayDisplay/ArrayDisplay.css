@@ -32,9 +32,9 @@
 
 @media (max-width: 600px) {
     .array-container{
-        height: 410px;
+        height: 390px;
     }
     .temp-bar {
-        height: 370px;
+        height: 350px;
     }
 }

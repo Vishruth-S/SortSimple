@@ -32,10 +32,16 @@
 
 @media (max-width: 600px) {
     .head {
-        margin-bottom: 15px;
-        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        font-size: 18px;
+        /* text-align: left; */
     }
     .algo-text {
         margin-left: 10px;
+        font-size: 14px;
+    }
+    .algo-text >div >div {
+        height: 27px !important;
     }
 }
