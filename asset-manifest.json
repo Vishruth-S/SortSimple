@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SortSimple/static/css/main.09c0b48f.chunk.css",
-    "main.js": "/SortSimple/static/js/main.58316d70.chunk.js",
-    "main.js.map": "/SortSimple/static/js/main.58316d70.chunk.js.map",
+    "main.js": "/SortSimple/static/js/main.74bf9209.chunk.js",
+    "main.js.map": "/SortSimple/static/js/main.74bf9209.chunk.js.map",
     "runtime-main.js": "/SortSimple/static/js/runtime-main.dd2d0be9.js",
     "runtime-main.js.map": "/SortSimple/static/js/runtime-main.dd2d0be9.js.map",
     "static/css/2.6a557ea9.chunk.css": "/SortSimple/static/css/2.6a557ea9.chunk.css",
     "static/js/2.144ef7f5.chunk.js": "/SortSimple/static/js/2.144ef7f5.chunk.js",
     "static/js/2.144ef7f5.chunk.js.map": "/SortSimple/static/js/2.144ef7f5.chunk.js.map",
     "index.html": "/SortSimple/index.html",
-    "precache-manifest.a9853ad6cf1d5cfb5f255962d24e2e3a.js": "/SortSimple/precache-manifest.a9853ad6cf1d5cfb5f255962d24e2e3a.js",
+    "precache-manifest.789ca267bb07f9f6637953b527b757e5.js": "/SortSimple/precache-manifest.789ca267bb07f9f6637953b527b757e5.js",
     "service-worker.js": "/SortSimple/service-worker.js",
     "static/css/2.6a557ea9.chunk.css.map": "/SortSimple/static/css/2.6a557ea9.chunk.css.map",
     "static/css/main.09c0b48f.chunk.css.map": "/SortSimple/static/css/main.09c0b48f.chunk.css.map",
@@ -25,6 +25,6 @@
     "static/css/2.6a557ea9.chunk.css",
     "static/js/2.144ef7f5.chunk.js",
     "static/css/main.09c0b48f.chunk.css",
-    "static/js/main.58316d70.chunk.js"
+    "static/js/main.74bf9209.chunk.js"
   ]
 }
