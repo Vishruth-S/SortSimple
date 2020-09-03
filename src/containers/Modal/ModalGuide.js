@@ -48,7 +48,7 @@ class ModalGuide extends Component {
         return (
             <Modal show={this.state.show}>
                 <div style={{ display: this.state.pagedisplay[0] }}>
-                    <Modal.Header><h5 className="heading1">Welcome to SortSimple, A sorting algorithm visualiser</h5></Modal.Header>
+                    <Modal.Header><h5 className="heading1">Welcome to SortSimple, A sorting algorithm visualizer</h5></Modal.Header>
                     <Modal.Body>
                         <div className="robot-img-div"><img className="robot-img" src={robotimg1} alt="img" /></div>
                         <p>This short guide will walk you through the features of this application.</p>
@@ -90,7 +90,7 @@ class ModalGuide extends Component {
                         <p className="info-text"><b>QuickSort:</b> based on divide and conquer approach in which the array is split into subarrays and these sub-arrays are recursively called to sort the elements.</p>
                         <p className="info-text"><b>MergeSort:</b> based on divide and conquer approach, first divides the array into equal halves and then combines them in a sorted manner. </p>
                         <p className="info-text"><b>CocktailSort:</b>  variation of Bubble sort. Traverses through a given array in both directions alternatively.</p>
-                        <p className="info-text"><b>OddevenSort:</b>  Sorting technique is subdivided into 2 phases odd phase and even phase, both these phases simultaneously at every iteration until all the elements get sorted.</p>
+                        <p className="info-text"><b>OddevenSort:</b>  Sorting technique is subdivided into 2 phases: odd phase and even phase, both these phases occur alternatively at every iteration until all the elements get sorted.</p>
                         <p className="info-text"><b>CountingSort:</b> sorts the elements of an array by counting the number of occurrences of each unique element in the array. The count is stored in an auxiliary array and the sorting is done by mapping the count as an index of the auxiliary array.</p>
                     </Modal.Body>
                 </div>

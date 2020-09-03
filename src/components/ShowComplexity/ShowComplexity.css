@@ -1,7 +1,7 @@
 .complexity {
     position: absolute;
     width: 90%;
-    top: 400px;
+    top: 390px;
 }
 
 .complexity-head {
@@ -12,29 +12,43 @@
     border: 1px solid black;
     min-width: 105px;
     text-align: center;
-  }
+}
 
 .space-column {
     min-width: 120px;
+}
+
+.complex-show-btn {
+    float: none;
+    border: none;
+    color: #00cb00;
+    border-radius: 7px;
+}
+
+.complex-hide-btn {
+    float: right;
+    border: none;
+    color: #bd0000;
+    margin-right: 20px;
+    font-size: 13px;
 }
 
 @media (max-width: 1400px) {
     .table1, .table1 th, .table1 td {
         min-width: 95px;
     }
-
     .space-column {
         min-width: 102px;
     }
-    
 }
 
 @media (max-width: 700px) {
     .complexity {
         margin-left: 20px;
-        position: unset;;
+        position: unset;
+        ;
     }
     .complexity-heading {
-        font-size: 18px !important ;
+        font-size: 18px !important;
     }
 }

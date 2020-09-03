@@ -26,7 +26,7 @@ class Sorter extends Component {
         Algocolor: Array(4).fill("white"),
         SelectionSortAlgo: ["Repeat (n-1) times", "set first unsorted element as min", "for each unsorted element", "if element<min", "set element as new min", "swap min with first unsorted element"],
         AlgocolorSelect: Array(6).fill("white"),
-        InsertionSortAlgo: ["Mark first element as sorted", "for each unsorted x", "temp=x", "for j=last_Sorted_Index to 0", "if temp < current element[j]", "move temp to the left by 1"],
+        InsertionSortAlgo: ["Mark first element as sorted", "for each unsorted x", "temp=x", "for j=last_Sorted_Index to 0", "if (temp < element[j])", "move element to the right by 1"],
         MergeSortAlgo: ["Split each element into partitions of size 1", "recursively merge adjacent partitions", "for i=leftPartIndex to rightPartIndex", "if(leftValue<=rightValue)", "copy leftValue", "else: copy rightValue"],
         QuickSortAlgo: ["For each unsorted Partition", "pivot = last_element_of_partition", "partitionIndex=indexOf_first_element", "for each element in partition", "if(element<pivot)", "swap(element, A[partitionIndex])", "partitionIndex ++", "swap(A[partitionIndex],pivot)"],
         AlgocolorQuick: Array(8).fill("white"),
