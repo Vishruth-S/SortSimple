@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/SortSimple/static/css/main.e4ce04a8.chunk.css",
-    "main.js": "/SortSimple/static/js/main.41a5e6c8.chunk.js",
-    "main.js.map": "/SortSimple/static/js/main.41a5e6c8.chunk.js.map",
+    "main.css": "/SortSimple/static/css/main.09c0b48f.chunk.css",
+    "main.js": "/SortSimple/static/js/main.58316d70.chunk.js",
+    "main.js.map": "/SortSimple/static/js/main.58316d70.chunk.js.map",
     "runtime-main.js": "/SortSimple/static/js/runtime-main.dd2d0be9.js",
     "runtime-main.js.map": "/SortSimple/static/js/runtime-main.dd2d0be9.js.map",
     "static/css/2.6a557ea9.chunk.css": "/SortSimple/static/css/2.6a557ea9.chunk.css",
-    "static/js/2.137e5ff7.chunk.js": "/SortSimple/static/js/2.137e5ff7.chunk.js",
-    "static/js/2.137e5ff7.chunk.js.map": "/SortSimple/static/js/2.137e5ff7.chunk.js.map",
+    "static/js/2.144ef7f5.chunk.js": "/SortSimple/static/js/2.144ef7f5.chunk.js",
+    "static/js/2.144ef7f5.chunk.js.map": "/SortSimple/static/js/2.144ef7f5.chunk.js.map",
     "index.html": "/SortSimple/index.html",
-    "precache-manifest.9b9da38fe74fe2c8b055e4ddf9254e47.js": "/SortSimple/precache-manifest.9b9da38fe74fe2c8b055e4ddf9254e47.js",
+    "precache-manifest.a9853ad6cf1d5cfb5f255962d24e2e3a.js": "/SortSimple/precache-manifest.a9853ad6cf1d5cfb5f255962d24e2e3a.js",
     "service-worker.js": "/SortSimple/service-worker.js",
     "static/css/2.6a557ea9.chunk.css.map": "/SortSimple/static/css/2.6a557ea9.chunk.css.map",
-    "static/css/main.e4ce04a8.chunk.css.map": "/SortSimple/static/css/main.e4ce04a8.chunk.css.map",
-    "static/js/2.137e5ff7.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.137e5ff7.chunk.js.LICENSE.txt",
+    "static/css/main.09c0b48f.chunk.css.map": "/SortSimple/static/css/main.09c0b48f.chunk.css.map",
+    "static/js/2.144ef7f5.chunk.js.LICENSE.txt": "/SortSimple/static/js/2.144ef7f5.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/SortSimple/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/logo.png": "/SortSimple/static/media/logo.ee6d1719.png",
     "static/media/robot.jpg": "/SortSimple/static/media/robot.58015650.jpg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.dd2d0be9.js",
     "static/css/2.6a557ea9.chunk.css",
-    "static/js/2.137e5ff7.chunk.js",
-    "static/css/main.e4ce04a8.chunk.css",
-    "static/js/main.41a5e6c8.chunk.js"
+    "static/js/2.144ef7f5.chunk.js",
+    "static/css/main.09c0b48f.chunk.css",
+    "static/js/main.58316d70.chunk.js"
   ]
 }
