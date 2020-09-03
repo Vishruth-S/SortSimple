@@ -473,13 +473,13 @@ class Sorter extends Component {
             if (isColorChange) {
                 const [barOneIdx, barTwoIdx] = animations[i];
                 const color = i % 3 === 0 ? "red" : "orange";
-                // let algoColor = i % 3 === 0 ? ["white","white","white","yellow","yellow","white"] : ["white","white","white","white","white","yellow"];
+                let algoColor = i % 3 === 0 ? ["white", "white", "white", "yellow", "yellow", "white"] : ["white", "white", "white", "white", "white", "yellow"];
                 await sleep(speed)
                 colors[barOneIdx] = color;
                 colors[barTwoIdx] = color;
                 this.setState({
                     colors: colors,
-                    // AlgocolorSelect: algoColor
+                    AlgocolorSelect: algoColor
                 })
             } else {
                 await sleep(speed)
@@ -648,7 +648,6 @@ class Sorter extends Component {
             AlgocolorCount: AlgocolorCount
         })
         await sleep(speed3)
-        // First populate the count object
         for (let i = min; i <= max; i++) {
             count[i] = 0;
         }
@@ -754,7 +753,6 @@ class Sorter extends Component {
     quickSort = async (arr, start, end) => {
         let speed = this.state.speed
         let colors = Array(arr.length).fill("blueviolet")
-        // let colors = [...this.state.colors]
         if (start >= end) {
             return
         }
@@ -770,7 +768,6 @@ class Sorter extends Component {
         await this.quickSort(arr, start, index - 1)
         await sleep(speed)
         await this.quickSort(arr, index + 1, end)
-        // colors = Array(arr.length).fill("blueviolet")
     }
 
     partition = async (arr, start, end) => {
@@ -990,7 +987,6 @@ function getMergeSortAnimations(array) {
     if (array.length <= 1) return array;
     const auxiliaryArray = array.slice();
     mergeSortHelper(array, 0, array.length - 1, auxiliaryArray, animations);
-    // console.log(animations)
     return animations
 }
 function mergeSortHelper(
