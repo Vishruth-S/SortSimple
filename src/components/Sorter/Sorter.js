@@ -162,39 +162,10 @@ class Sorter extends Component {
     }
 
     ShowAlgorithmHandler = (v) => {
-        if (v === "1") {
-            this.setState({
-                algorithm: 1
-            })
-        } else if (v === "2") {
-            this.setState({
-                algorithm: 2
-            })
-        } else if (v === "3") {
-            this.setState({
-                algorithm: 3
-            })
-        } else if (v === "4") {
-            this.setState({
-                algorithm: 4
-            })
-        } else if (v === "5") {
-            this.setState({
-                algorithm: 5
-            })
-        } else if (v === "6") {
-            this.setState({
-                algorithm: 6
-            })
-        } else if (v === "7") {
-            this.setState({
-                algorithm: 7
-            })
-        } else if (v === "8") {
-            this.setState({
-                algorithm: 8
-            })
-        }
+        let algo = Number(v)
+        this.setState({
+            algorithm: algo
+        })
     }
 
     bubblesorter = async () => {
