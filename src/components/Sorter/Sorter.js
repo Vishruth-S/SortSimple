@@ -992,7 +992,7 @@ class Sorter extends Component {
         return (
             <div>
                 <Navbar />
-                {/* <ModalGuide /> */}
+                <ModalGuide />
                 <div className="main">
                     <div className="row">
                         <div className="col-lg-2 col-12 toolbar">
