@@ -13,6 +13,7 @@ import ShowComplexity from '../ShowComplexity/ShowComplexity'
 class Sorter extends Component {
 
     state = {
+        stop: false,
         array: [],
         colors: [],
         arrayLen: 25,
@@ -39,10 +40,10 @@ class Sorter extends Component {
     }
 
     componentDidMount() {
-        this.arrayReset();
+        this.arrayReset(0);
     }
 
-    arrayReset = () => {
+    arrayReset = (type) => {
         const new_array = []
         const arrlength = this.state.arrayLen
         for (let i = 0; i < arrlength; i++) {
@@ -53,6 +54,15 @@ class Sorter extends Component {
             width: barwidth
         })
         let final_array = this.arrayHeightHandler(new_array)
+        if (type) {
+            switch (type) {
+                case 1: final_array = final_array.sort((a, b) => a - b)
+                    break;
+                case 2: final_array = final_array.sort((a, b) => b - a)
+                    break;
+                case 3: final_array = getAlmostSortedArray(final_array)
+            }
+        }
         this.setState({ array: final_array, colors: Array(final_array.length).fill('blueviolet') })
     }
 
@@ -168,6 +178,36 @@ class Sorter extends Component {
         })
     }
 
+    stopSortingHandler = () => {
+        this.setState({
+            stop: true
+        })
+    }
+
+    stopSorting = () => {
+        this.setState({
+            stop: false,
+            colors: Array(this.state.arrayLen).fill("blueviolet"),
+            disableInput: false,
+            BubblesortAlgo: ["for i=0 to last_Element", "for j=0 to Last_Unsorted_Element", "if left_Element>right_Element", "swap(left_Element,right_Element)"],
+            Algocolor: Array(4).fill("white"),
+            SelectionSortAlgo: ["Repeat (n-1) times", "set first unsorted element as min", "for each unsorted element", "if element<min", "set element as new min", "swap min with first unsorted element"],
+            AlgocolorSelect: Array(6).fill("white"),
+            InsertionSortAlgo: ["Mark first element as sorted", "for each unsorted x", "temp=x", "for j=last_Sorted_Index to 0", "if (temp < element[j])", "move element to the right by 1"],
+            MergeSortAlgo: ["Split each element into partitions of size 1", "recursively merge adjacent partitions", "for i=leftPartIndex to rightPartIndex", "if(leftValue<=rightValue)", "copy leftValue", "else: copy rightValue"],
+            QuickSortAlgo: ["For each unsorted Partition", "pivot = last_element_of_partition", "partitionIndex=indexOf_first_element", "for each element in partition", "if(element<pivot)", "swap(element, A[partitionIndex])", "partitionIndex ++", "swap(A[partitionIndex],pivot)"],
+            AlgocolorQuick: Array(8).fill("white"),
+            CocktailAlgo: ["start=0, end=n-1, swapped=true", "while (swapped)", "for i=start to end", "if(left_element>right_element)", "swap (left, right); swapped=true", "end --; swapped=false", "for i=end-1 to start", "if(left_element>right_element)", "swap (left, right); swapped=true", "start ++"],
+            AlgocolorCocktail: Array(10).fill("white"),
+            OddevenSortAlgo: ["sorted = false", "while(!sorted)", "sorted=true", "for i=1; i<=n-2; i=i+2", "if(arr[i] > arr[i+1])", "swap(arr[i], arr[i+1]); sorted=false", "for i=0; i<=n-2; i=i+2", "if(arr[i] > arr[i+1])", "swap(arr[i], arr[i+1]); sorted=false"],
+            AlgocolorOddeven: Array(9).fill("white"),
+            CountSortAlgo: ["max = largest_element_in_array", "initialize count array with all zeros", " for j = 0 to last_element_index", "find count of each unique element", "store it at jth index in count array", "for j = 0 to max", "find cumulative sum;store in count array", "for j = last_element_index down to 1", "restore the elements to array", "reduce count of elements restored by 1"],
+            AlgocolorCount: Array(10).fill("white"),
+            transition: "0.3s",
+            speed: 200
+        })
+    }
+
     bubblesorter = async () => {
         this.setState({
             disableInput: true,
@@ -188,6 +228,9 @@ class Sorter extends Component {
             for (j = 0; j < len - i - 1; j++) {
                 let speed = this.state.speed
                 for (let k = 0; k < len; k++) {
+                    if (this.state.stop) {
+                        return this.stopSorting()
+                    }
                     if (k === j || k === j + 1) {
                         color = 'red'
                     }
@@ -274,6 +317,9 @@ class Sorter extends Component {
                 speed = this.state.speed
                 if (speed !== 0) {
                     await sleep(speed * 0.3)
+                }
+                if (this.state.stop) {
+                    return this.stopSorting()
                 }
                 colors[j] = "orange"
                 this.setState({
@@ -369,6 +415,9 @@ class Sorter extends Component {
                 await sleep(speed * 0.6)
             }
             for (let j = i - 1; j >= 0; j--) {
+                if (this.state.stop) {
+                    return this.stopSorting()
+                }
                 speed = this.state.speed
                 let flag = 0
                 this.setState({
@@ -435,6 +484,9 @@ class Sorter extends Component {
             transition: "0s",
             algorithm: 4,
         })
+        if (this.state.stop) {
+            return this.stopSorting()
+        }
         let arr1 = [...this.state.array]
         let animations = getMergeSortAnimations(arr1)
         let colors = Array(arr1.length).fill('blueviolet')
@@ -497,6 +549,9 @@ class Sorter extends Component {
                 await sleep(speed2)
             }
             for (let i = start; i < end; ++i) {
+                if (this.state.stop) {
+                    return this.stopSorting()
+                }
                 speed2 = this.state.speed
                 colors[i] = "red"
                 colors[i + 1] = "red"
@@ -845,6 +900,9 @@ class Sorter extends Component {
                 await sleep(speed4 * 0.7)
             }
             for (let i = 1; i <= n - 2; i += 2) {
+                if (this.state.stop) {
+                    return this.stopSorting()
+                }
                 AlgocolorOddeven = ["white", "white", "white", "white", "yellow", "white", "white", "white", "white"]
                 speed4 = this.state.speed
                 colors[i] = "red"
@@ -885,6 +943,9 @@ class Sorter extends Component {
                 await sleep(speed4 * 0.7)
             }
             for (let i = 0; i <= n - 2; i += 2) {
+                if (this.state.stop) {
+                    return this.stopSorting()
+                }
                 speed4 = this.state.speed
                 AlgocolorOddeven = ["white", "white", "white", "white", "white", "white", "white", "yellow", "white"]
                 colors[i] = "orange"
@@ -931,7 +992,7 @@ class Sorter extends Component {
         return (
             <div>
                 <Navbar />
-                <ModalGuide />
+                {/* <ModalGuide /> */}
                 <div className="main">
                     <div className="row">
                         <div className="col-lg-2 col-12 toolbar">
@@ -951,7 +1012,18 @@ class Sorter extends Component {
     }
 }
 
-
+function getAlmostSortedArray(array) {
+    let almostsorted_array = array.sort((a, b) => a - b)
+    let nums = []
+    let unsorted = Math.floor(0.15 * array.length)
+    for (let i = 0; i < unsorted; i++) {
+        nums[i] = randomNumber(0, array.length - 1)
+    }
+    for (let i = 0; i < nums.length - 1; i++) {
+        swap(almostsorted_array, nums[i], nums[i + 1]);
+    }
+    return almostsorted_array
+}
 
 function getMergeSortAnimations(array) {
     const animations = [];

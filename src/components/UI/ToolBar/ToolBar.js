@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 class ToolBar extends Component {
     state = {
         value: "0",
+        arraytype: "0",
     }
     optionChangeHandler = (e) => {
         // console.log(e.target.value)
@@ -16,39 +17,46 @@ class ToolBar extends Component {
         return this.props.clicked.ShowAlgorithmHandler(e.target.value)
     }
     sortMethodHandler = () => {
-        // console.log(this.state.value)
-        if (this.state.value === "1") {
-            return this.props.clicked.bubblesorter()
-        } else if (this.state.value === "2") {
-            return this.props.clicked.selectionSorter()
-        } else if (this.state.value === "3") {
-            return this.props.clicked.insertionSorter()
-        } else if (this.state.value === "4") {
-            return this.props.clicked.mergeSorter()
-        } else if (this.state.value === "5") {
-            return this.props.clicked.cocktailSorter()
-        } else if (this.state.value === "6") {
-            return this.props.clicked.countSorter()
-        } else if (this.state.value === "7") {
-            return this.props.clicked.quickSortHelper()
-        } else if (this.state.value === "8") {
-            return this.props.clicked.oddevenSorter()
-        } else {
-            alert("Please select Algorithm")
+        switch (Number(this.state.value)) {
+            case 1: return this.props.clicked.bubblesorter()
+            case 2: return this.props.clicked.selectionSorter()
+            case 3: return this.props.clicked.insertionSorter()
+            case 4: return this.props.clicked.mergeSorter()
+            case 5: return this.props.clicked.cocktailSorter()
+            case 6: return this.props.clicked.countSorter()
+            case 7: return this.props.clicked.quickSortHelper()
+            case 8: return this.props.clicked.oddevenSorter()
+            default: alert("Please select Algorithm")
         }
     }
+    arrayOptionHandler = (e) => {
+        this.setState({
+            arraytype: e.target.value
+        })
+    }
     render() {
+        let stopUnavailable = ["4", "6", "7"]
+        let stopped = !this.props.state.disableInput || stopUnavailable.includes(this.state.value) ? true : false
         return (
             <div className="tool-container">
                 <div className="tool-tip-mobile">
                     <p><i className="fa fa-info-circle"></i>Pro tip: Take a large array and visualise various algorithms at max speed for a fun visual :)</p>
                 </div>
-                <div className="tool-element tool-array">
-                    <button className="tool-button" disabled={this.props.state.disableInput} onClick={this.props.clicked.arrayReset}>New array</button>
-                </div>
                 <div className="tool-element tool-array-size">
                     <div style={{ color: this.props.state.disableInput ? "gray" : "white" }}>Change Array Size</div>
                     <input type="range" min="10" max="100" defaultValue="25" disabled={this.props.state.disableInput} onChange={this.props.clicked.arraySizeHandler}></input>
+                </div>
+                <div style={{ color: this.props.state.disableInput ? "gray" : "white" }}>Choose Array type</div>
+                <div >
+                    <select defaultValue="0" className="selector array-select" disabled={this.props.state.disableInput} onChange={this.arrayOptionHandler}>
+                        <option className="select-option-disabled" value="0">Random</option>
+                        <option className="select-option" value="3">Almost Sorted</option>
+                        <option className="select-option" value="1">Sorted Ascending</option>
+                        <option className="select-option" value="2">Sorted Descending</option>
+                    </select>
+                </div>
+                <div className="tool-element tool-array">
+                    <button className="tool-button tool-btn-generate" disabled={this.props.state.disableInput} onClick={() => this.props.clicked.arrayReset(Number(this.state.arraytype))}>Generate array</button>
                 </div>
                 <div className="tool-element tool-sort">
                     <div style={{ color: this.props.state.disableInput ? "gray" : "white" }}>Choose Sorting Algorithm</div>
@@ -72,6 +80,9 @@ class ToolBar extends Component {
                 <div className="tool-element tool-speed">
                     <div style={{ color: "white" }}>Change Speed</div>
                     <input type="range" min="10" max="401" value={401 - this.props.state.speed} onChange={this.props.clicked.speedChangeHandler}></input>
+                </div>
+                <div className="tool-element">
+                    <button className="tool-button tool-btn-stop" disabled={stopped} onClick={this.props.clicked.stopSortingHandler} >STOP</button>
                 </div>
                 <div className="tool-tip-desktop">
                     <p><i className="fa fa-info-circle"></i>Pro tip: Take a large array and visualise various algorithms at max speed for a fun visual :)</p>
