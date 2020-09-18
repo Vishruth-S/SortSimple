@@ -61,6 +61,8 @@ class Sorter extends Component {
                 case 2: final_array = final_array.sort((a, b) => b - a)
                     break;
                 case 3: final_array = getAlmostSortedArray(final_array)
+                    break;
+                default: alert("Internal Error, Please contact Site Owner if you see this alert");
             }
         }
         this.setState({ array: final_array, colors: Array(final_array.length).fill('blueviolet') })

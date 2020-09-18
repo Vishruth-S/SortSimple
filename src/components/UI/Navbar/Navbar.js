@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand navbar-light mynav">
             <span className="navbar-brand" ><img className="nav-logo" alt="SortSimple_logo" src={logo} /></span>
             <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav">
                 </ul>
                 <span className="navbar-text float-left">
                     Made by <a href="https://vishruth-s.github.io/Me/">VS</a>
